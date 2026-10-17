@@ -16,8 +16,8 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=13">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=24">
 </head>
 <body>
     <a href="#main" class="skip-link">Skip to content</a>
@@ -31,6 +31,7 @@
                 <a href="index.html#projects" class="nav-link active">Projects</a>
                 <a href="index.html#education" class="nav-link">Education</a>
                 <a href="index.html#skills" class="nav-link">Skills</a>
+                <a href="about.html" class="nav-link">About</a>
                 <a href="index.html#contact" class="nav-link">Contact</a>
             </nav>
             <div class="nav-controls">
@@ -50,7 +51,6 @@
             <a href="index.html#projects" class="breadcrumb">← All projects</a>
 
             <header class="project-header">
-                <span class="eyebrow">Course project · Politecnico di Torino · Systems Engineer</span>
                 <h1>H-ADES: Dual-Mission 12U CubeSat</h1>
                 <p class="lead">Phase 0/A design of a 12U CubeSat in LEO that demonstrates deep-space technologies — landmark navigation, optical communication and machine-learning power management — while monitoring urban heat islands over Italy.</p>
             </header>
@@ -67,7 +67,7 @@
                     <section id="role" class="pblock">
                         <header class="pblock-head">
                             <span class="pblock-num">01</span>
-                            <div><span class="pblock-kicker">My role</span><h2>Systems Engineer in a 13-person team</h2></div>
+                            <div><h2>Systems Engineer in a 13-person team</h2></div>
                         </header>
                         <p class="pblock-lead">I kept the design consistent across subsystems: architecture, interfaces, requirements and budgets.</p>
                         <p>While each engineer sized their own subsystem, I coordinated the design of the system as a whole and the integration between them:</p>
@@ -81,7 +81,7 @@
                     <section id="mission" class="pblock">
                         <header class="pblock-head">
                             <span class="pblock-num">02</span>
-                            <div><span class="pblock-kicker">Mission</span><h2>A deep-space testbed that also does Earth science</h2></div>
+                            <div><h2>A deep-space testbed that also does Earth science</h2></div>
                         </header>
                         <p class="pblock-lead">H-ADES uses LEO to demonstrate technologies for future deep-space CubeSats while monitoring urban heat islands over Italy.</p>
                         <h3>Objectives</h3>
@@ -92,7 +92,7 @@
                             <li><strong>Autonomous operations:</strong> test a machine-learning power-management algorithm against a deterministic one.</li>
                             <li><strong>Urban heat islands:</strong> night-time land-surface temperature and vegetation index over the 12 Italian cities most affected.</li>
                         </ul>
-                        <figure class="prose-figure"><img src="assets/mission/coverage_italy.jpg" alt="STK coverage grid over Turin, Milan and Genoa" loading="lazy"><figcaption>STK coverage analysis over Italian cities (Turin, Milan, Genoa shown).</figcaption></figure>
+                        <figure class="prose-figure"><img src="assets/mission/coverage_italy.jpg" width="400" height="357" alt="STK coverage grid over Turin, Milan and Genoa" loading="lazy"><figcaption>STK coverage analysis over Italian cities (Turin, Milan, Genoa shown).</figcaption></figure>
                         <h3>Architecture</h3>
                         <ul>
                             <li><strong>Spacecraft:</strong> custom 12U XL CubeSat, launched on Falcon 9 from an ExoPod Nova dispenser.</li>
@@ -105,20 +105,20 @@
                     <section id="system" class="pblock">
                         <header class="pblock-head">
                             <span class="pblock-num">03</span>
-                            <div><span class="pblock-kicker">System</span><h2>Payload and bus, kept independent</h2></div>
+                            <div><h2>Payload and bus, kept independent</h2></div>
                         </header>
                         <p class="pblock-lead">A dedicated payload computer and cold redundancy on critical units keep a payload fault from taking down the spacecraft.</p>
                         <p>The flight segment is split into payload and bus. A dedicated payload computer, separate from the platform computer, handles image processing, Earth-map generation and landmark detection, so payload faults can't take down the bus. Critical units use cold redundancy, which adds reliability without loading the power system.</p>
-                        <figure class="prose-figure"><img src="assets/mission/system_architecture.png" alt="System architecture block diagram grouping components by subsystem with power and data links" loading="lazy"><figcaption>System architecture: components grouped by subsystem, with power buses and data links.</figcaption></figure>
+                        <figure class="prose-figure"><img src="assets/mission/system_architecture.png" width="1800" height="1075" alt="System architecture block diagram grouping components by subsystem with power and data links" loading="lazy"><figcaption>System architecture: components grouped by subsystem, with power buses and data links.</figcaption></figure>
                         <div class="figure-pair">
-                            <figure class="prose-figure"><img src="assets/mission/product_breakdown.png" alt="Product breakdown structure of the H-ADES spacecraft" loading="lazy"><figcaption>Product breakdown structure.</figcaption></figure>
-                            <figure class="prose-figure"><img src="assets/mission/state_diagram.png" alt="State diagram of the spacecraft operative modes and transitions" loading="lazy"><figcaption>Operative modes and transitions.</figcaption></figure>
+                            <figure class="prose-figure"><img src="assets/mission/product_breakdown.png" width="1800" height="873" alt="Product breakdown structure of the H-ADES spacecraft" loading="lazy"><figcaption>Product breakdown structure.</figcaption></figure>
+                            <figure class="prose-figure"><img src="assets/mission/state_diagram.png" width="1800" height="1120" alt="State diagram of the spacecraft operative modes and transitions" loading="lazy"><figcaption>Operative modes and transitions.</figcaption></figure>
                         </div>
                     </section>
                     <section id="budgets" class="pblock">
                         <header class="pblock-head">
                             <span class="pblock-num">04</span>
-                            <div><span class="pblock-kicker">Budgets</span><h2>Budgets with ESA margins</h2></div>
+                            <div><h2>Budgets with ESA margins</h2></div>
                         </header>
                         <p class="pblock-lead">20.3 kg against a 50 kg limit, fitted into 10.5 of the 12U available.</p>
                         <div class="stat-grid">
@@ -128,16 +128,16 @@
                             <div><strong>~$32M</strong><span>estimated lifecycle cost</span></div>
                         </div>
                         <p>Margins follow ESA's philosophy for assessment studies: 5% on off-the-shelf parts, 20% on custom structures, and 25% at system level on power. The disposal manoeuvre, analysed with DRAMA, brings the spacecraft down within about four years, which complies with ESA's space-debris mitigation policy.</p>
-                        <figure class="prose-figure"><img src="assets/mission/hades_inner_structure.jpg" alt="CAD of the populated inner structure, colour-coded by subsystem" loading="lazy"><figcaption>Populated structure, colour-coded by subsystem: AODCS (red), computers (yellow), EPS (green), communications (purple), payloads (blue).</figcaption></figure>
+                        <figure class="prose-figure"><img src="assets/mission/hades_inner_structure.jpg" width="714" height="464" alt="CAD of the populated inner structure, colour-coded by subsystem" loading="lazy"><figcaption>Populated structure, colour-coded by subsystem: AODCS (red), computers (yellow), EPS (green), communications (purple), payloads (blue).</figcaption></figure>
                     </section>
                     <section id="verification" class="pblock">
                         <header class="pblock-head">
                             <span class="pblock-num">05</span>
-                            <div><span class="pblock-kicker">Verification</span><h2>From digital model to protoflight</h2></div>
+                            <div><h2>From digital model to protoflight</h2></div>
                         </header>
                         <p class="pblock-lead">The AIV plan follows ECSS standards, and FEM analysis puts the first natural frequency far above Falcon 9's minimum.</p>
                         <p>The assembly, integration and verification plan follows ECSS verification and testing standards. It moves from a digital model through structural-thermal and engineering-qualification models to a protoflight model. Static thermal (hot and cold case) and FEM modal analyses checked the design against the launcher's requirements: the first natural frequency is 258 Hz, well above Falcon 9's minimum.</p>
-                        <figure class="prose-figure"><img src="assets/mission/aiv_plan.png" alt="AIV plan timeline across project phases" loading="lazy"><figcaption>AIV plan across the project life cycle.</figcaption></figure>
+                        <figure class="prose-figure"><img src="assets/mission/aiv_plan.png" width="1800" height="907" alt="AIV plan timeline across project phases" loading="lazy"><figcaption>AIV plan across the project life cycle.</figcaption></figure>
                     </section>
                 </article>
 
@@ -153,18 +153,9 @@
                         </ol>
                     </nav>
                     <figure>
-                        <img src="assets/mission/hades_cad.jpg" alt="CAD of the H-ADES CubeSat with deployed solar arrays">
+                        <img src="assets/mission/hades_cad.jpg" width="476" height="542" alt="CAD of the H-ADES CubeSat with deployed solar arrays">
                         <figcaption>H-ADES with solar arrays deployed.</figcaption>
                     </figure>
-                    <div>
-                        <span class="eyebrow">Key numbers</span>
-                        <ul class="lang-list">
-                            <li><span>Orbit</span><span>SSO, 550 km</span></li>
-                            <li><span>Form factor</span><span>12U XL</span></li>
-                            <li><span>Wet mass</span><span>20.3 kg</span></li>
-                            <li><span>Payloads</span><span>3</span></li>
-                        </ul>
-                    </div>
                     <div>
                         <span class="eyebrow">Tools &amp; methods</span>
                         <div class="tag-list">
@@ -196,6 +187,6 @@
         </div>
     </footer>
 
-    <script src="app.js?v=13"></script>
+    <script src="app.js?v=19"></script>
 </body>
 </html>

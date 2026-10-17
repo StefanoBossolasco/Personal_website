@@ -21,8 +21,8 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=13">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=24">
 </head>
 <body>
     <a href="#main" class="skip-link">Skip to content</a>
@@ -38,6 +38,7 @@
                 <a href="#projects" class="nav-link">Projects</a>
                 <a href="#education" class="nav-link">Education</a>
                 <a href="#skills" class="nav-link">Skills</a>
+                <a href="about.html" class="nav-link">About</a>
                 <a href="#contact" class="nav-link">Contact</a>
                 <a href="assets/CV_Stefano_Bossolasco.pdf" class="nav-link nav-cv-mobile" data-requires-file target="_blank" rel="noopener">Download CV</a>
             </nav>
@@ -59,20 +60,13 @@
         <section id="home" class="hero">
             <div class="container hero-grid">
                 <div class="hero-content">
-                    <div class="status-pill"><span class="pulse-dot"></span> Open to PhD positions in spacecraft GNC &amp; autonomy</div>
                     <h1 class="hero-title">Stefano Bossolasco</h1>
-                    <p class="hero-subtitle">Aerospace engineer working on <span class="hl">guidance, navigation &amp; control</span> for small spacecraft</p>
+                    <p class="hero-subtitle">Aerospace engineer specialising in <span class="hl">guidance, navigation &amp; control</span> and space systems</p>
                     <p class="hero-lead">
-                        I'm finishing my M.Sc. at Politecnico di Torino and collaborating with NASA JPL on fault-tolerant Model Predictive Control for close-proximity operations. Before and alongside research, I wrote ESA proposals at a space start-up and co-founded a tech company that grew to 100,000+ users.
+                        I'm finishing my M.Sc. at Politecnico di Torino. At NASA JPL I developed fault-tolerant control for small spacecraft and tested it on hardware. I've also written ESA proposals at a space start-up and co-founded a tech company that grew to 100,000+ users.
                     </p>
-                    <ul class="hero-facts">
-                        <li class="hero-fact"><span class="dot" style="background: var(--research)"></span>Research collaborator, NASA JPL</li>
-                        <li class="hero-fact"><span class="dot" style="background: var(--accent)"></span>M.Sc. Aerospace Eng., PoliTo</li>
-                        <li class="hero-fact"><span class="dot" style="background: var(--industry)"></span>Space business development</li>
-                        <li class="hero-fact"><span class="dot" style="background: var(--venture)"></span>Startup co-founder</li>
-                    </ul>
                     <div class="hero-actions">
-                        <a href="#research" class="btn btn-primary">View research</a>
+                        <a href="#research" class="btn btn-primary">Explore my work</a>
                         <a href="assets/CV_Stefano_Bossolasco.pdf" class="btn btn-secondary" data-requires-file target="_blank" rel="noopener">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                             Download CV
@@ -93,20 +87,20 @@
             <div class="container affiliations-inner">
                 <span class="affiliations-label">Worked &amp; studied at</span>
                 <div class="affiliations-logos">
-                    <img src="assets/nasa_jpl_logo_full.png" alt="NASA Jet Propulsion Laboratory" class="logo-plate">
+                    <img src="assets/nasa_jpl_logo_full.png" width="893" height="177" alt="NASA Jet Propulsion Laboratory" class="logo-plate">
                     <span class="wordmark">Politecnico di Torino</span>
-                    <img src="assets/revolv_logo_white.png" alt="Revolv Space" class="affil-logo only-dark"><img src="assets/revolv_logo_dark.png" alt="Revolv Space" class="affil-logo only-light">
-                    <img src="assets/avio_aero_logo.png" alt="Avio Aero" class="logo-plate">
-                    <img src="assets/eventvm_logo.png" alt="Eventvm">
+                    <img src="assets/revolv_logo_white.png" width="700" height="122" alt="Revolv Space" class="affil-logo only-dark"><img src="assets/revolv_logo_dark.png" width="700" height="122" alt="Revolv Space" class="affil-logo only-light">
+                    <img src="assets/avio_aero_logo.png" width="738" height="198" alt="Avio Aero" class="logo-plate">
+                    <img src="assets/eventvm_logo.png" width="600" height="161" alt="Eventvm">
                 </div>
             </div>
         </section>
 
         <!-- Three tracks overview -->
-        <section id="profile" class="section">
+        <!-- Three-tracks overview, hidden for now: remove the "hidden" attribute to show it again -->
+        <section id="profile" class="section" hidden>
             <div class="container">
                 <div class="section-header reveal">
-                    <span class="eyebrow">Profile</span>
                     <h2 class="section-title">One engineer, three perspectives</h2>
                     <p class="section-lead">My core is research in spacecraft GNC. Industry and entrepreneurship taught me how technology gets funded, scoped and shipped — which shapes the problems I choose to work on.</p>
                 </div>
@@ -152,7 +146,6 @@
         <section id="research" class="section section-alt">
             <div class="container">
                 <div class="section-header reveal">
-                    <span class="eyebrow">Research</span>
                     <h2 class="section-title">Making autonomous spacecraft safe when hardware fails</h2>
                     <p class="section-lead">I'm interested in control methods that keep guarantees under uncertainty and faults, and that are cheap enough to run on real flight computers.</p>
                 </div>
@@ -160,7 +153,7 @@
                 <div class="research-layout">
                     <article class="card current-research reveal">
                         <h3 class="card-title">Current research</h3>
-                        <img src="assets/mpc/gsat_run_cover_sm.jpg" alt="The GSAT sled flying a square trajectory around an obstacle at JPL" loading="lazy">
+                        <img src="assets/mpc/gsat_run_cover_sm.jpg" width="900" height="498" alt="The GSAT sled flying a square trajectory around an obstacle at JPL" loading="lazy">
                         <div class="meta-row"><span>NASA JPL · GNC</span><span>M.Sc. thesis</span><span>03/2025 – present</span></div>
                         <h3>Scenario-based MPC for free-flyer inspection with thruster failures</h3>
                         <ul class="rq-list">
@@ -205,9 +198,7 @@
         <section id="experience" class="section">
             <div class="container">
                 <div class="section-header reveal">
-                    <span class="eyebrow">Experience</span>
                     <h2 class="section-title">Where I've worked</h2>
-                    <p class="section-lead">Grouped by track so each one can be read on its own.</p>
                 </div>
 
                 <!-- Research track -->
@@ -217,7 +208,7 @@
                         <article class="exp-card reveal">
                             <div>
                                 <div class="exp-top">
-                                    <img src="assets/nasa_jpl_logo_full.png" alt="NASA JPL" class="exp-logo logo-plate">
+                                    <img src="assets/nasa_jpl_logo_full.png" width="893" height="177" alt="NASA JPL" class="exp-logo logo-plate">
                                     <span class="exp-date">03/2025 – Present</span>
                                 </div>
                                 <h4 class="exp-role">Research Collaborator — Spacecraft GNC</h4>
@@ -230,9 +221,9 @@
                                 <div class="tag-list"><span class="tag">MPC</span><span class="tag">CasADi</span><span class="tag">SmallSatSim</span><span class="tag">GSAT testbed</span></div>
                             </div>
                             <div class="exp-gallery">
-                                <button type="button" data-lightbox><img src="assets/nasa_jpl_photo_1.jpg" alt="At NASA JPL" loading="lazy"></button>
-                                <button type="button" data-lightbox><img src="assets/nasa_jpl_photo_2.jpg" alt="NASA JPL visitor sign" loading="lazy"></button>
-                                <button type="button" data-lightbox><img src="assets/nasa_jpl_photo_3.jpg" alt="Portrait at the NASA JPL sign" loading="lazy"></button>
+                                <button type="button" data-lightbox><img src="assets/nasa_jpl_photo_1.jpg" width="1024" height="941" alt="At NASA JPL" loading="lazy"></button>
+                                <button type="button" data-lightbox><img src="assets/nasa_jpl_photo_2.jpg" width="1024" height="794" alt="NASA JPL visitor sign" loading="lazy"></button>
+                                <button type="button" data-lightbox><img src="assets/nasa_jpl_photo_3.jpg" width="1024" height="768" alt="Portrait at the NASA JPL sign" loading="lazy"></button>
                             </div>
                         </article>
                     </div>
@@ -245,7 +236,7 @@
                         <article class="exp-card reveal">
                             <div>
                                 <div class="exp-top">
-                                    <span><img src="assets/revolv_logo_white.png" alt="Revolv Space" class="exp-logo only-dark"><img src="assets/revolv_logo_dark.png" alt="Revolv Space" class="exp-logo only-light"></span>
+                                    <span><img src="assets/revolv_logo_white.png" width="700" height="122" alt="Revolv Space" class="exp-logo only-dark"><img src="assets/revolv_logo_dark.png" width="700" height="122" alt="Revolv Space" class="exp-logo only-light"></span>
                                     <span class="exp-date">06/2025 – 01/2026</span>
                                 </div>
                                 <h4 class="exp-role">Business Developer Engineer — Space Systems</h4>
@@ -259,16 +250,16 @@
                                 <div class="tag-list"><span class="tag">ESA ITT</span><span class="tag">European funding</span><span class="tag">Work packages</span><span class="tag">Project management</span></div>
                             </div>
                             <div class="exp-gallery">
-                                <button type="button" data-lightbox><img src="assets/revolv_photo_1.jpg" alt="Revolv Space office" loading="lazy"></button>
-                                <button type="button" data-lightbox><img src="assets/revolv_photo_2.jpg" alt="Revolv hardware check" loading="lazy"></button>
-                                <button type="button" data-lightbox><img src="assets/revolv_photo_3.jpg" alt="Revolv Space event" loading="lazy"></button>
+                                <button type="button" data-lightbox><img src="assets/revolv_photo_1.jpg" width="1024" height="771" alt="Revolv Space office" loading="lazy"></button>
+                                <button type="button" data-lightbox><img src="assets/revolv_photo_2.jpg" width="768" height="1024" alt="Revolv hardware check" loading="lazy"></button>
+                                <button type="button" data-lightbox><img src="assets/revolv_photo_3.jpg" width="900" height="1200" alt="Revolv Space event" loading="lazy"></button>
                             </div>
                         </article>
 
                         <article class="exp-card no-gallery reveal">
                             <div>
                                 <div class="exp-top">
-                                    <img src="assets/avio_aero_logo.png" alt="Avio Aero" class="exp-logo logo-plate">
+                                    <img src="assets/avio_aero_logo.png" width="738" height="198" alt="Avio Aero" class="exp-logo logo-plate">
                                     <span class="exp-date">02/2023 – 08/2023</span>
                                 </div>
                                 <h4 class="exp-role">Mechanical Engineering Intern &amp; B.Sc. Thesis Student</h4>
@@ -291,7 +282,7 @@
                         <article class="exp-card reveal">
                             <div>
                                 <div class="exp-top">
-                                    <img src="assets/eventvm_logo.png" alt="Eventvm" class="exp-logo">
+                                    <img src="assets/eventvm_logo.png" width="600" height="161" alt="Eventvm" class="exp-logo">
                                     <span class="exp-date">04/2022 – 05/2025</span>
                                 </div>
                                 <h4 class="exp-role">Co-Founder &amp; Product Lead — Tech &amp; BD</h4>
@@ -306,9 +297,9 @@
                                 <div class="tag-list"><span class="tag">Product</span><span class="tag">Data pipelines</span><span class="tag">Fundraising</span><span class="tag">Team leadership</span></div>
                             </div>
                             <div class="exp-gallery">
-                                <button type="button" data-lightbox><img src="assets/eventvm_photo_1.jpg" alt="Eventvm team" loading="lazy"></button>
-                                <button type="button" data-lightbox><img src="assets/eventvm_photo_2.jpg" alt="Eventvm team in Rome" loading="lazy"></button>
-                                <button type="button" data-lightbox><img src="assets/eventvm_photo_3.jpg" alt="Eventvm users milestone celebration" loading="lazy"></button>
+                                <button type="button" data-lightbox><img src="assets/eventvm_photo_1.jpg" width="838" height="1024" alt="Eventvm team" loading="lazy"></button>
+                                <button type="button" data-lightbox><img src="assets/eventvm_photo_2.jpg" width="1024" height="649" alt="Eventvm team in Rome" loading="lazy"></button>
+                                <button type="button" data-lightbox><img src="assets/eventvm_photo_3.jpg" width="640" height="640" alt="Eventvm users milestone celebration" loading="lazy"></button>
                             </div>
                         </article>
                     </div>
@@ -320,13 +311,11 @@
         <section id="projects" class="section section-alt">
             <div class="container">
                 <div class="section-header reveal">
-                    <span class="eyebrow">Projects</span>
                     <h2 class="section-title">Technical projects</h2>
-                    <p class="section-lead">Research and academic work, each with a short write-up of the problem, method and tools.</p>
                 </div>
                 <div class="projects-grid">
                     <a href="progetto-mpc.html" class="project-card reveal">
-                        <div class="project-thumb"><img src="assets/mpc/gsat_run_cover_sm.jpg" alt="" loading="lazy"></div>
+                        <div class="project-thumb"><img src="assets/mpc/gsat_run_cover_sm.jpg" width="900" height="498" alt="" loading="lazy"></div>
                         <div class="project-body">
                             <div class="project-kicker"><span>M.Sc. thesis · NASA JPL</span><span>2025 –</span></div>
                             <h3>Scenario-based MPC with thruster failures</h3>
@@ -336,7 +325,7 @@
                         </div>
                     </a>
                     <a href="progetto-simulatore.html" class="project-card reveal">
-                        <div class="project-thumb"><img src="assets/sim/electra_cad.jpg" alt="" loading="lazy"></div>
+                        <div class="project-thumb"><img src="assets/sim/electra_cad.jpg" width="1200" height="625" alt="" loading="lazy"></div>
                         <div class="project-body">
                             <div class="project-kicker"><span>Academic · PoliTo</span><span>2024 – 25</span></div>
                             <h3>6-DoF CubeSat docking simulator</h3>
@@ -346,7 +335,7 @@
                         </div>
                     </a>
                     <a href="progetto-missione.html" class="project-card reveal">
-                        <div class="project-thumb"><img src="assets/mission/hades_inner_structure.jpg" alt="" loading="lazy" style="object-fit: contain; background: #e9ecf1;"></div>
+                        <div class="project-thumb"><img src="assets/mission/hades_inner_structure.jpg" width="714" height="464" alt="" loading="lazy" style="object-fit: contain; background: #e9ecf1;"></div>
                         <div class="project-body">
                             <div class="project-kicker"><span>Systems Engineer · PoliTo</span><span>2025</span></div>
                             <h3>H-ADES: dual-mission 12U CubeSat</h3>
@@ -356,7 +345,7 @@
                         </div>
                     </a>
                     <a href="progetto-rover.html" class="project-card reveal">
-                        <div class="project-thumb"><img src="assets/rover/payload_side.jpg" alt="" loading="lazy" style="object-fit: contain; background: #ffffff;"></div>
+                        <div class="project-thumb"><img src="assets/rover/payload_side.jpg" width="1400" height="799" alt="" loading="lazy" style="object-fit: contain; background: #ffffff;"></div>
                         <div class="project-body">
                             <div class="project-kicker"><span>Company challenge · Thales Alenia Space</span></div>
                             <h3>Lunar Rover Payload Challenge</h3>
@@ -373,7 +362,6 @@
         <section id="education" class="section">
             <div class="container">
                 <div class="section-header reveal">
-                    <span class="eyebrow">Education</span>
                     <h2 class="section-title">Education &amp; certifications</h2>
                 </div>
                 <div class="edu-layout">
@@ -422,7 +410,6 @@
         <section id="skills" class="section section-alt">
             <div class="container">
                 <div class="section-header reveal">
-                    <span class="eyebrow">Skills</span>
                     <h2 class="section-title">Toolbox</h2>
                 </div>
                 <div class="skills-grid">
@@ -465,6 +452,7 @@
                             <h4>Scuba diving</h4>
                             <span class="beyond-meta">Sub-Rec Diver 1* (TSA)</span>
                         </div>
+                        <a href="about.html" class="project-more" style="display:inline-block;margin-top:1rem;">More about me</a>
                     </div>
                 </div>
             </div>
@@ -475,9 +463,8 @@
             <div class="container">
                 <div class="contact-card reveal">
                     <div>
-                        <span class="eyebrow">Contact</span>
-                        <h2>Let's talk research</h2>
-                        <p>I'm looking for PhD opportunities in spacecraft GNC, robust control and autonomy. I'm also happy to discuss collaborations, space-sector projects or startups.</p>
+                        <h2>Let's work together</h2>
+                        <p>I'm open to engineering roles and PhD positions in GNC, space systems and autonomy, and always happy to talk about collaborations or start-ups.</p>
                         <div class="hero-actions">
                             <a href="mailto:stefano.bossolasco.01@gmail.com" class="btn btn-primary">Email me</a>
                             <a href="assets/CV_Stefano_Bossolasco.pdf" class="btn btn-secondary" data-requires-file target="_blank" rel="noopener">Download CV</a>
@@ -516,9 +503,9 @@
 
     <dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
         <button class="icon-btn lightbox-close" type="button" aria-label="Close">✕</button>
-        <figure><img src="" alt=""><figcaption></figcaption></figure>
+        <figure><img alt=""><figcaption></figcaption></figure>
     </dialog>
 
-    <script src="app.js?v=13"></script>
+    <script src="app.js?v=19"></script>
 </body>
 </html>

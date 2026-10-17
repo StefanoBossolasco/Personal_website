@@ -28,9 +28,11 @@ function initThemeToggle() {
     toggle.addEventListener('click', () => {
         const next = isLight() ? 'dark' : 'light';
         const root = document.documentElement;
+        const apply = () => { root.setAttribute('data-theme', next); syncLabel(); };
         root.classList.add('theme-switching');
-        root.setAttribute('data-theme', next);
-        syncLabel();
+        // Crossfade the whole page so every surface changes together, not the background alone
+        if (document.startViewTransition && !prefersReducedMotion) document.startViewTransition(apply);
+        else apply();
         setTimeout(() => root.classList.remove('theme-switching'), 400);
         try { localStorage.setItem('theme', next); } catch (e) { /* storage unavailable */ }
     });
@@ -94,15 +96,22 @@ function initNavigation() {
 /* --- Fade-in on scroll --- */
 function initReveal() {
     const items = document.querySelectorAll('.reveal');
-    if (prefersReducedMotion || !('IntersectionObserver' in window)) {
-        items.forEach(el => el.classList.add('visible'));
-        return;
-    }
+    if (!items.length || !('IntersectionObserver' in window)) return;
+    // Hide-until-revealed only applies once this runs, so content never depends on the script
+    document.documentElement.classList.add('js-reveal');
+    // Cards in the same grid enter one after another (60 ms apart), never all at once
+    document.querySelectorAll('.projects-grid, .tracks-grid, .skills-grid, .exp-list, .life-cards, .beyond').forEach(grid => {
+        [...grid.children].filter(el => el.classList.contains('reveal')).forEach((el, i) => el.style.setProperty('--stagger', Math.min(i, 4)));
+    });
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
+                const el = entry.target;
+                el.classList.add('visible');
+                observer.unobserve(el);
+                // Once it has arrived, hand the element back its own transitions (e.g. card hover)
+                const done = (parseInt(el.style.getPropertyValue('--stagger') || 0, 10) * 60) + 450;
+                setTimeout(() => { el.classList.remove('reveal', 'visible'); el.style.removeProperty('--stagger'); }, done);
             }
         });
     }, { rootMargin: '0px 0px -8% 0px' });
@@ -119,7 +128,7 @@ function initLightbox() {
         dialog.className = 'lightbox';
         dialog.id = 'lightbox';
         dialog.setAttribute('aria-label', 'Image viewer');
-        dialog.innerHTML = '<button class="icon-btn lightbox-close" type="button" aria-label="Close">✕</button><figure><img src="" alt=""><figcaption></figcaption></figure>';
+        dialog.innerHTML = '<button class="icon-btn lightbox-close" type="button" aria-label="Close">✕</button><figure><img alt=""><figcaption></figcaption></figure>';
         document.body.appendChild(dialog);
     }
     if (!dialog || typeof dialog.showModal !== 'function') return;
@@ -190,11 +199,6 @@ function initOrbitalSimulation() {
         { rx: 140, ry: 58, angle: Math.PI * 2 / 3, speed: 0.005, color: '#fb923c' }
     ].map(o => ({ ...o, rx: o.rx * scale, ry: o.ry * scale, trail: [] }));
 
-    // Pause the loop while the tab is hidden
-    let running = false;
-    const start = () => { if (!running && !prefersReducedMotion) { running = true; requestAnimationFrame(frame); } };
-    document.addEventListener('visibilitychange', () => { if (document.hidden) running = false; else start(); });
-
     function draw(advance) {
         const light = isLight();
         ctx.clearRect(0, 0, width, height);
@@ -247,18 +251,11 @@ function initOrbitalSimulation() {
         });
     }
 
-    function frame() {
-        if (!running) return;
-        draw(true);
-        requestAnimationFrame(frame);
-    }
-
-    if (prefersReducedMotion) {
-        draw(false);
-        new MutationObserver(() => draw(false)).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
-    } else {
-        start();
-    }
+    // Static backdrop: drawn once, redrawn only on resize or theme change (no endless motion)
+    const redraw = () => draw(false);
+    redraw();
+    window.addEventListener('resize', redraw);
+    new MutationObserver(redraw).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
 }
 
 /* --- Highlight the current section in a project page's "On this page" list --- */
@@ -318,7 +315,8 @@ function initYouTubeEmbeds() {
         let playing = false;
         let player = null;
         const sync = () => {
-            if (!player || prefersReducedMotion) return;
+            // The player object exists before its methods do; wait for onReady
+            if (!player || typeof player.playVideo !== 'function' || prefersReducedMotion) return;
             const show = onScreen(host);
             if (show && !playing) { player.playVideo(); playing = true; }
             else if (!show && playing) { player.pauseVideo(); playing = false; }

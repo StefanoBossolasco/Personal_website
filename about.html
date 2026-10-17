@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Stefano Bossolasco</title>
+    <meta name="description" content="About Stefano Bossolasco: aerospace engineer from Piedmont, Italy. Background, timeline and life beyond engineering.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='6' fill='%2338bdf8'/><ellipse cx='16' cy='16' rx='14' ry='5' fill='none' stroke='%2338bdf8' stroke-width='2' transform='rotate(-25 16 16)'/></svg>">
+    <script>
+        (function () {
+            var t = null;
+            try { t = localStorage.getItem('theme'); } catch (e) {}
+            if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', t);
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=24">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <header class="navbar scrolled">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Stefano<span>.</span>Bossolasco</a>
+            <nav class="nav-menu" id="nav-menu" aria-label="Main">
+                <a href="index.html#research" class="nav-link">Research</a>
+                <a href="index.html#experience" class="nav-link">Experience</a>
+                <a href="index.html#projects" class="nav-link">Projects</a>
+                <a href="index.html#education" class="nav-link">Education</a>
+                <a href="index.html#skills" class="nav-link">Skills</a>
+                <a href="about.html" class="nav-link active" aria-current="page">About</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </nav>
+            <div class="nav-controls">
+                <button class="icon-btn theme-toggle" id="theme-toggle" aria-label="Toggle light/dark theme">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+                <button class="icon-btn nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main" class="about-page">
+        <section class="about-hero">
+            <div class="container about-hero-grid">
+                <div>
+                    <h1>Hi, I'm Stefano</h1>
+                    <p class="about-lead">I'm an aerospace engineer from Piedmont, Italy. Space has been my thing since school, when I reached the national finals of the Italian Astronomy Olympiad.</p>
+                    <p>Since then I've worked across research, industry and a start-up I co-founded: from fault-tolerant control at NASA JPL, to ESA proposals at Revolv Space, to building a product used by more than 100,000 people. Outside engineering, I volunteer as treasurer of my town's youth association and I'm a certified scuba diver.</p>
+                    <div class="hero-actions">
+                        <a href="assets/CV_Stefano_Bossolasco.pdf" class="btn btn-primary" data-requires-file target="_blank" rel="noopener">Download CV</a>
+                        <a href="mailto:stefano.bossolasco.01@gmail.com" class="btn btn-secondary">Email me</a>
+                        <a href="https://www.linkedin.com/in/stefano-bossolasco-10b54219a/" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    </div>
+                </div>
+                <div class="about-portrait">
+                    <img src="assets/profile.png" alt="Portrait of Stefano Bossolasco" width="320" height="320">
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt" id="life">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Life outside the lab</h2>
+                </div>
+                <div class="life-cards">
+                    <div class="card">
+                        <h3>Volunteering</h3>
+                        <span class="life-meta">Treasurer · Movimento Giovanile di Centallo · 2022 – now</span>
+                        <p>I manage the association's finances and help organise cultural, educational and social activities.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Scuba diving</h3>
+                        <span class="life-meta">Sub-Rec Diver 1* · Trimix Scuba Association</span>
+                        <p>Certified to 20 m.</p>
+                    </div>
+                </div>
+                <!-- Photo gallery: remove "hidden" once photos are added. One <figure> per photo, e.g.
+                <figure class="life-photo"><button type="button" data-lightbox><img src="assets/about/xxx.jpg" alt="…" loading="lazy"></button><figcaption>…</figcaption></figure> -->
+                <div class="life-gallery" hidden></div>
+            </div>
+        </section>
+
+        <section class="section" id="timeline">
+            <div class="container about-split">
+                <div>
+                    <div class="section-header">
+                        <h2 class="section-title">At a glance</h2>
+                    </div>
+                    <ol class="about-timeline">
+                        <li class="tl-item tl-research">
+                            <span class="tl-date">2025 – now</span>
+                            <div><strong>Research Collaborator, NASA JPL</strong><p>Fault-tolerant MPC for small spacecraft, tested on the GSAT air-bearing sled.</p></div>
+                        </li>
+                        <li class="tl-item tl-industry">
+                            <span class="tl-date">2025 – 2026</span>
+                            <div><strong>Business Developer Engineer, Revolv Space</strong><p>Technical proposals for ESA and national space-agency tenders.</p></div>
+                        </li>
+                        <li class="tl-item tl-edu">
+                            <span class="tl-date">2024 – now</span>
+                            <div><strong>M.Sc. Aerospace Engineering, Politecnico di Torino</strong><p>Space systems, flight dynamics and GNC.</p></div>
+                        </li>
+                        <li class="tl-item tl-venture">
+                            <span class="tl-date">2022 – 2025</span>
+                            <div><strong>Co-founder &amp; Product Lead, Eventvm</strong><p>Led a team of 10; the platform grew to 100,000+ users.</p></div>
+                        </li>
+                        <li class="tl-item tl-industry">
+                            <span class="tl-date">2023</span>
+                            <div><strong>Intern &amp; B.Sc. thesis, Avio Aero</strong><p>Simulation of oil aeration in aero-engine gear pumps.</p></div>
+                        </li>
+                        <li class="tl-item tl-edu">
+                            <span class="tl-date">2020 – 2023</span>
+                            <div><strong>B.Sc. Aerospace Engineering, Politecnico di Torino</strong></div>
+                        </li>
+                        <li class="tl-item tl-edu">
+                            <span class="tl-date">2016</span>
+                            <div><strong>National finalist, Italian Astronomy Olympiad</strong><p>Where the interest in space started.</p></div>
+                        </li>
+                    </ol>
+                </div>
+                <aside class="about-side">
+                    <div class="card">
+                        <h3 class="card-title">Languages</h3>
+                        <ul class="lang-list">
+                            <li><span>Italian</span><span>Native</span></li>
+                            <li><span>English</span><span>C1 (IELTS 7.0)</span></li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title">Certifications</h3>
+                        <ul class="lang-list">
+                            <li><span>STK Master, Level 2</span><span>AGI / Ansys</span></li>
+                            <li><span>IELTS Academic</span><span>Band 7.0</span></li>
+                        </ul>
+                    </div>
+                    <a href="index.html#projects" class="card about-link"><strong>See my projects →</strong></a>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
+        <button class="icon-btn lightbox-close" type="button" aria-label="Close">✕</button>
+        <figure><img alt=""><figcaption></figcaption></figure>
+    </dialog>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Stefano Bossolasco</p>
+            <p><a href="index.html">Back to home</a></p>
+        </div>
+    </footer>
+
+    <script src="app.js?v=19"></script>
+</body>
+</html>
