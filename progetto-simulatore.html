@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6-DoF CubeSat Docking Simulator | Stefano Bossolasco</title>
+    <meta name="description" content="MATLAB/Simulink 6-DoF simulator of a 3U CubeSat rendezvous and docking in LEO: Hohmann, radial boost and cone approach with SMC, APF+LQR and LQR/PD attitude control.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='6' fill='%2338bdf8'/><ellipse cx='16' cy='16' rx='14' ry='5' fill='none' stroke='%2338bdf8' stroke-width='2' transform='rotate(-25 16 16)'/></svg>">
+    <script>
+        (function () {
+            var t = null;
+            try { t = localStorage.getItem('theme'); } catch (e) {}
+            if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', t);
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=13">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <header class="navbar scrolled">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Stefano<span>.</span>Bossolasco</a>
+            <nav class="nav-menu" id="nav-menu" aria-label="Main">
+                <a href="index.html#research" class="nav-link">Research</a>
+                <a href="index.html#experience" class="nav-link">Experience</a>
+                <a href="index.html#projects" class="nav-link active">Projects</a>
+                <a href="index.html#education" class="nav-link">Education</a>
+                <a href="index.html#skills" class="nav-link">Skills</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </nav>
+            <div class="nav-controls">
+                <button class="icon-btn theme-toggle" id="theme-toggle" aria-label="Toggle light/dark theme">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+                <button class="icon-btn nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main" class="project-page">
+        <div class="container">
+            <a href="index.html#projects" class="breadcrumb">← All projects</a>
+
+            <header class="project-header">
+                <span class="eyebrow">Course project · Politecnico di Torino</span>
+                <h1>6-DoF CubeSat Rendezvous &amp; Docking Simulator</h1>
+                <p class="lead">A MATLAB/Simulink simulator in which a 3U CubeSat chaser rendezvouses and docks with a target in low Earth orbit, with guidance, position control and attitude control across three manoeuvres under orbital disturbances.</p>
+            </header>
+
+            <div class="project-meta">
+                <div><small>Course</small><span>Spacecraft Dynamics &amp; Control</span></div>
+                <div><small>Spacecraft</small><span>ELECTRA 3U CubeSat</span></div>
+                <div><small>Year</small><span>2024 – 2025</span></div>
+                <div><small>Tools</small><span>MATLAB / Simulink</span></div>
+            </div>
+
+            <div class="project-layout">
+                <article class="prose">
+                    <section id="mission" class="pblock">
+                        <header class="pblock-head">
+                            <span class="pblock-num">01</span>
+                            <div><span class="pblock-kicker">Mission</span><h2>Docking a CubeSat with a target in LEO</h2></div>
+                        </header>
+                        <p class="pblock-lead">The chaser starts about 10 km from the target and has to dock in three phases, each with tighter accuracy than the last.</p>
+                        <ol class="steps">
+                            <li><strong>Hohmann transfer (far rendezvous):</strong> from 3 km below and about 10 km behind the target to the target's orbit, 3 km behind it. Burn times come from an offline shooting plan.</li>
+                            <li><strong>Radial boost (close-range rendezvous):</strong> along V-bar, from 3 km to 500 m.</li>
+                            <li><strong>Cone approach (final approach):</strong> from 500 m to under 4 m, staying inside a cone that narrows from ±1 m at 500 m to ±0.1 m at 4 m.</li>
+                        </ol>
+                        <figure class="prose-figure"><img src="assets/sim/gnc_logic.png" alt="GNC loop: guidance algorithm, control algorithm, actuation dynamics and Hill's equations in closed loop" loading="lazy"><figcaption>GNC logic for the Hohmann and radial-boost phases: an offline guidance plan feeds the controller, which drives the thrusters on Hill's dynamics.</figcaption></figure>
+                    </section>
+                    <section id="model" class="pblock">
+                        <header class="pblock-head">
+                            <span class="pblock-num">02</span>
+                            <div><span class="pblock-kicker">Model</span><h2>A 6-DoF simulator built around a real CubeSat</h2></div>
+                        </header>
+                        <p class="pblock-lead">Relative orbital motion and attitude are simulated together, under the main LEO disturbances, for a CubeSat in development at PoliTo.</p>
+                        <h3>Simulator</h3>
+                        <p>The simulator models the chaser's relative translational motion with Hill's (Clohessy–Wiltshire) equations in the target's LVLH frame, and its attitude with Euler's equations and quaternions. The plant includes the main LEO disturbances: gravity gradient, atmospheric drag, solar radiation pressure and J2.</p>
+                        <p>It runs on a fixed-step Runge–Kutta (ODE4) solver at 100 Hz, with guidance updated at 1 Hz and control at 50 Hz, connected through rate-transition blocks. Navigation is not modelled, so the controllers use the true state.</p>
+                        <h3>Spacecraft: ELECTRA</h3>
+                        <p>The chaser is ELECTRA, a 3U CubeSat in Phase A at the Politecnico di Torino CubeSat team, designed to measure the ionosphere's Total Electron Content with a GNSS receiver. For this project its mission was re-imagined as a docking between two spacecraft.</p>
+                        <ul>
+                            <li><strong>Attitude actuators:</strong> four NanoAvionics 4RW0 reaction wheels in a pyramid configuration, which adds redundancy if one wheel fails.</li>
+                            <li><strong>Propulsion redesign:</strong> the baseline electric system (4 thrusters, 2·10⁻⁴ N) was too weak for impulsive manoeuvres, so I replaced it with 12 thrusters of 0.05 N each (Isp 31 s). With 0.3 kg of propellant this gives a ΔV budget of about 34.5 m/s.</li>
+                            <li><strong>Mass properties:</strong> 5.29 kg, with inertias taken from the CAD model and component datasheets.</li>
+                        </ul>
+                    </section>
+                    <section id="control" class="pblock">
+                        <header class="pblock-head">
+                            <span class="pblock-num">03</span>
+                            <div><span class="pblock-kicker">Control</span><h2>Guidance and control laws</h2></div>
+                        </header>
+                        <p class="pblock-lead">Sliding-mode control handles the far phases. For the final approach I compared two position controllers and two attitude controllers.</p>
+                        <ul>
+                            <li><strong>Position, Hohmann &amp; radial boost:</strong> first-order sliding-mode control (SMC) with a boundary layer to limit chattering.</li>
+                            <li><strong>Position, cone approach:</strong> two strategies compared: an artificial potential field (APF) combined with LQR, and a pure SMC law.</li>
+                            <li><strong>Attitude:</strong> an LQR on the quaternion error, angular rates, position and velocity, with Q and R weighted by maximum allowed values, used in all phases. In the cone approach, a PD controller was also tested for comparison.</li>
+                        </ul>
+                    </section>
+                    <section id="results" class="pblock">
+                        <header class="pblock-head">
+                            <span class="pblock-num">04</span>
+                            <div><span class="pblock-kicker">Results</span><h2>APF + LQR keeps the approach inside the cone</h2></div>
+                        </header>
+                        <p class="pblock-lead">The full manoeuvre used under 20 m/s of the 34.5 m/s ΔV budget, and only APF + LQR respected the approach cone all the way in.</p>
+                        <div class="figure-pair">
+                            <figure class="prose-figure"><img src="assets/sim/hohmann_trajectory.png" alt="Hohmann transfer trajectory in the V-bar / R-bar plane" loading="lazy"><figcaption>Hohmann transfer to 3 km behind the target.</figcaption></figure>
+                            <figure class="prose-figure"><img src="assets/sim/radial_boost_trajectory.png" alt="Radial boost trajectory from 3000 m to 500 m along V-bar" loading="lazy"><figcaption>Radial boost from 3 km to 500 m.</figcaption></figure>
+                        </div>
+                        <p>In the cone approach, APF + LQR kept the chaser inside the approach cone the whole way, with lateral deviations of about ±5 cm and low propellant use. The pure SMC law was more aggressive: it left the cone at just over 100 m from the target, which in real operations would abort the approach, and it fired the thrusters far more often.</p>
+                        <div class="figure-pair">
+                            <figure class="prose-figure"><img src="assets/sim/cone_apf_lqr.png" alt="Cone approach with APF and LQR: trajectory stays within the cone boundaries" loading="lazy"><figcaption>APF + LQR: stays inside the cone.</figcaption></figure>
+                            <figure class="prose-figure"><img src="assets/sim/cone_smc.png" alt="Cone approach with pure SMC: trajectory crosses the upper cone boundary" loading="lazy"><figcaption>Pure SMC: crosses the cone boundary.</figcaption></figure>
+                        </div>
+                        <p>On the attitude side, the reaction wheels came close to saturation only briefly and never reached it. The PD controller converged to similar steady-state values as the LQR, but with a sharper initial transient. The whole manoeuvre cost <strong>under 20 m/s of ΔV</strong> out of the 34.5 m/s available, with most of it spent on the precise station-keeping at the end of the cone approach.</p>
+                        <figure class="prose-figure"><img src="assets/sim/deltav_mass.png" alt="Applied thruster force, cumulative delta-V and chaser mass over the full manoeuvre" loading="lazy"><figcaption>Thruster activity, cumulative ΔV and chaser mass over the full ~4-hour manoeuvre.</figcaption></figure>
+                    </section>
+                    <section id="context" class="pblock">
+                        <header class="pblock-head">
+                            <span class="pblock-num">05</span>
+                            <div><span class="pblock-kicker">Context</span><h2>Part of a course</h2></div>
+                        </header>
+                        <p class="pblock-lead">The simulator was the final project of Spacecraft Dynamics &amp; Control at Politecnico di Torino.</p>
+                        <p>The same report covers three preparatory exercises, whose components were reused in the simulator: a state-feedback attitude controller with PWPF thruster modulation, LQR attitude control with reaction wheels, and SMC trajectory tracking for a Hohmann transfer.</p>
+                    </section>
+                </article>
+
+                <aside class="project-aside">
+                    <nav class="toc" aria-label="On this page">
+                        <span class="eyebrow">On this page</span>
+                        <ol>
+                            <li><a href="#mission"><span>01</span>Mission</a></li>
+                            <li><a href="#model"><span>02</span>Model</a></li>
+                            <li><a href="#control"><span>03</span>Control</a></li>
+                            <li><a href="#results"><span>04</span>Results</a></li>
+                            <li><a href="#context"><span>05</span>Context</a></li>
+                        </ol>
+                    </nav>
+                    <figure>
+                        <img src="assets/sim/electra_cad.jpg" alt="CAD model of the ELECTRA 3U CubeSat">
+                        <figcaption>CAD model of ELECTRA, the 3U CubeSat used as chaser.</figcaption>
+                    </figure>
+                    <div>
+                        <span class="eyebrow">Key numbers</span>
+                        <ul class="lang-list">
+                            <li><span>Initial separation</span><span>~10 km</span></li>
+                            <li><span>Final distance</span><span>&lt; 4 m</span></li>
+                            <li><span>ΔV used</span><span>&lt; 20 m/s</span></li>
+                            <li><span>Lateral error (APF+LQR)</span><span>±5 cm</span></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <span class="eyebrow">Tools &amp; methods</span>
+                        <div class="tag-list">
+                            <span class="tag">MATLAB</span>
+                            <span class="tag">Simulink</span>
+                            <span class="tag">Hill / CW equations</span>
+                            <span class="tag">Quaternions</span>
+                            <span class="tag">LQR</span>
+                            <span class="tag">Sliding-mode control</span>
+                            <span class="tag">Artificial potential field</span>
+                            <span class="tag">PD control</span>
+                            <span class="tag">Reaction wheels</span>
+                            <span class="tag">ΔV budget</span>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+
+            <nav class="project-nav" aria-label="More projects">
+                <a href="progetto-mpc.html"><small>← Previous</small><span>Scenario-Based MPC with Thruster Failures</span></a>
+                <a href="progetto-missione.html"><small>Next →</small><span>H-ADES: Dual-Mission 12U CubeSat</span></a>
+            </nav>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Stefano Bossolasco</p>
+            <p><a href="index.html">Back to home</a></p>
+        </div>
+    </footer>
+
+    <script src="app.js?v=13"></script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H-ADES Dual-Mission CubeSat | Stefano Bossolasco</title>
+    <meta name="description" content="H-ADES: Phase 0/A design of a 12U CubeSat demonstrating deep-space navigation, optical communication and ML power management while monitoring urban heat islands over Italy. Role: Systems Engineer.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='6' fill='%2338bdf8'/><ellipse cx='16' cy='16' rx='14' ry='5' fill='none' stroke='%2338bdf8' stroke-width='2' transform='rotate(-25 16 16)'/></svg>">
+    <script>
+        (function () {
+            var t = null;
+            try { t = localStorage.getItem('theme'); } catch (e) {}
+            if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', t);
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=13">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <header class="navbar scrolled">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Stefano<span>.</span>Bossolasco</a>
+            <nav class="nav-menu" id="nav-menu" aria-label="Main">
+                <a href="index.html#research" class="nav-link">Research</a>
+                <a href="index.html#experience" class="nav-link">Experience</a>
+                <a href="index.html#projects" class="nav-link active">Projects</a>
+                <a href="index.html#education" class="nav-link">Education</a>
+                <a href="index.html#skills" class="nav-link">Skills</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </nav>
+            <div class="nav-controls">
+                <button class="icon-btn theme-toggle" id="theme-toggle" aria-label="Toggle light/dark theme">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+                <button class="icon-btn nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main" class="project-page">
+        <div class="container">
+            <a href="index.html#projects" class="breadcrumb">← All projects</a>
+
+            <header class="project-header">
+                <span class="eyebrow">Course project · Politecnico di Torino · Systems Engineer</span>
+                <h1>H-ADES: Dual-Mission 12U CubeSat</h1>
+                <p class="lead">Phase 0/A design of a 12U CubeSat in LEO that demonstrates deep-space technologies — landmark navigation, optical communication and machine-learning power management — while monitoring urban heat islands over Italy.</p>
+            </header>
+
+            <div class="project-meta">
+                <div><small>Course</small><span>Space Missions &amp; Systems Design</span></div>
+                <div><small>My role</small><span>Systems Engineer</span></div>
+                <div><small>Team</small><span>Team H · 13 people</span></div>
+                <div><small>Phase</small><span>0 / A</span></div>
+            </div>
+
+            <div class="project-layout">
+                <article class="prose">
+                    <section id="role" class="pblock">
+                        <header class="pblock-head">
+                            <span class="pblock-num">01</span>
+                            <div><span class="pblock-kicker">My role</span><h2>Systems Engineer in a 13-person team</h2></div>
+                        </header>
+                        <p class="pblock-lead">I kept the design consistent across subsystems: architecture, interfaces, requirements and budgets.</p>
+                        <p>While each engineer sized their own subsystem, I coordinated the design of the system as a whole and the integration between them:</p>
+                        <ul>
+                            <li><strong>System architecture:</strong> defined how payloads and bus subsystems fit together, including the interfaces between them: CAN, RS-422, LVDS, PC/104 and I²C data links, and the 3.3 / 5 / 12 V power buses.</li>
+                            <li><strong>Requirements:</strong> checked that mission and system requirements, managed in Valispace with ECSS classification, were met by the design.</li>
+                            <li><strong>Budgets:</strong> consolidated and checked the mass, volume and power budgets, applying ESA's margin philosophy for assessment studies.</li>
+                            <li><strong>Integration:</strong> acted as the reference point between subsystem engineers, propagating changes and resolving conflicts across iterations.</li>
+                        </ul>
+                    </section>
+                    <section id="mission" class="pblock">
+                        <header class="pblock-head">
+                            <span class="pblock-num">02</span>
+                            <div><span class="pblock-kicker">Mission</span><h2>A deep-space testbed that also does Earth science</h2></div>
+                        </header>
+                        <p class="pblock-lead">H-ADES uses LEO to demonstrate technologies for future deep-space CubeSats while monitoring urban heat islands over Italy.</p>
+                        <h3>Objectives</h3>
+                        <p>The name stands for Hybrid – Advanced Dual mission for Earth and Space. Its four objectives:</p>
+                        <ul>
+                            <li><strong>Landmark navigation:</strong> map the Earth, build a landmark database on board and use it to estimate the spacecraft's position, checked against GNSS.</li>
+                            <li><strong>Optical communication:</strong> send the same science data through a laser terminal and an S-band link, then compare what arrives on the ground.</li>
+                            <li><strong>Autonomous operations:</strong> test a machine-learning power-management algorithm against a deterministic one.</li>
+                            <li><strong>Urban heat islands:</strong> night-time land-surface temperature and vegetation index over the 12 Italian cities most affected.</li>
+                        </ul>
+                        <figure class="prose-figure"><img src="assets/mission/coverage_italy.jpg" alt="STK coverage grid over Turin, Milan and Genoa" loading="lazy"><figcaption>STK coverage analysis over Italian cities (Turin, Milan, Genoa shown).</figcaption></figure>
+                        <h3>Architecture</h3>
+                        <ul>
+                            <li><strong>Spacecraft:</strong> custom 12U XL CubeSat, launched on Falcon 9 from an ExoPod Nova dispenser.</li>
+                            <li><strong>Orbit:</strong> circular sun-synchronous orbit at 550 km (LTAN 4 am), giving access to both ground stations and night-time city passes.</li>
+                            <li><strong>Payloads:</strong> HyperScout-S hyperspectral camera (vegetation index and daylight navigation), T-Scout thermal-infrared camera (land temperature and eclipse navigation), and the TESAT CubeLCT laser terminal.</li>
+                            <li><strong>Ground segment:</strong> optical ground stations at DLR Oberpfaffenhofen and ESA Teide; radio ground stations at Weilheim and Fucino.</li>
+                            <li><strong>Communications:</strong> laser and S-band for science data, UHF for TT&amp;C, with no deployable antennas.</li>
+                        </ul>
+                    </section>
+                    <section id="system" class="pblock">
+                        <header class="pblock-head">
+                            <span class="pblock-num">03</span>
+                            <div><span class="pblock-kicker">System</span><h2>Payload and bus, kept independent</h2></div>
+                        </header>
+                        <p class="pblock-lead">A dedicated payload computer and cold redundancy on critical units keep a payload fault from taking down the spacecraft.</p>
+                        <p>The flight segment is split into payload and bus. A dedicated payload computer, separate from the platform computer, handles image processing, Earth-map generation and landmark detection, so payload faults can't take down the bus. Critical units use cold redundancy, which adds reliability without loading the power system.</p>
+                        <figure class="prose-figure"><img src="assets/mission/system_architecture.png" alt="System architecture block diagram grouping components by subsystem with power and data links" loading="lazy"><figcaption>System architecture: components grouped by subsystem, with power buses and data links.</figcaption></figure>
+                        <div class="figure-pair">
+                            <figure class="prose-figure"><img src="assets/mission/product_breakdown.png" alt="Product breakdown structure of the H-ADES spacecraft" loading="lazy"><figcaption>Product breakdown structure.</figcaption></figure>
+                            <figure class="prose-figure"><img src="assets/mission/state_diagram.png" alt="State diagram of the spacecraft operative modes and transitions" loading="lazy"><figcaption>Operative modes and transitions.</figcaption></figure>
+                        </div>
+                    </section>
+                    <section id="budgets" class="pblock">
+                        <header class="pblock-head">
+                            <span class="pblock-num">04</span>
+                            <div><span class="pblock-kicker">Budgets</span><h2>Budgets with ESA margins</h2></div>
+                        </header>
+                        <p class="pblock-lead">20.3 kg against a 50 kg limit, fitted into 10.5 of the 12U available.</p>
+                        <div class="stat-grid">
+                            <div><strong>20.3 kg</strong><span>wet mass, against a 50 kg limit</span></div>
+                            <div><strong>10.5 U</strong><span>internal volume, incl. 20% margin, in a 12U XL</span></div>
+                            <div><strong>~55 m/s</strong><span>total ΔV incl. disposal and 5% margin</span></div>
+                            <div><strong>~$32M</strong><span>estimated lifecycle cost</span></div>
+                        </div>
+                        <p>Margins follow ESA's philosophy for assessment studies: 5% on off-the-shelf parts, 20% on custom structures, and 25% at system level on power. The disposal manoeuvre, analysed with DRAMA, brings the spacecraft down within about four years, which complies with ESA's space-debris mitigation policy.</p>
+                        <figure class="prose-figure"><img src="assets/mission/hades_inner_structure.jpg" alt="CAD of the populated inner structure, colour-coded by subsystem" loading="lazy"><figcaption>Populated structure, colour-coded by subsystem: AODCS (red), computers (yellow), EPS (green), communications (purple), payloads (blue).</figcaption></figure>
+                    </section>
+                    <section id="verification" class="pblock">
+                        <header class="pblock-head">
+                            <span class="pblock-num">05</span>
+                            <div><span class="pblock-kicker">Verification</span><h2>From digital model to protoflight</h2></div>
+                        </header>
+                        <p class="pblock-lead">The AIV plan follows ECSS standards, and FEM analysis puts the first natural frequency far above Falcon 9's minimum.</p>
+                        <p>The assembly, integration and verification plan follows ECSS verification and testing standards. It moves from a digital model through structural-thermal and engineering-qualification models to a protoflight model. Static thermal (hot and cold case) and FEM modal analyses checked the design against the launcher's requirements: the first natural frequency is 258 Hz, well above Falcon 9's minimum.</p>
+                        <figure class="prose-figure"><img src="assets/mission/aiv_plan.png" alt="AIV plan timeline across project phases" loading="lazy"><figcaption>AIV plan across the project life cycle.</figcaption></figure>
+                    </section>
+                </article>
+
+                <aside class="project-aside">
+                    <nav class="toc" aria-label="On this page">
+                        <span class="eyebrow">On this page</span>
+                        <ol>
+                            <li><a href="#role"><span>01</span>My role</a></li>
+                            <li><a href="#mission"><span>02</span>Mission</a></li>
+                            <li><a href="#system"><span>03</span>System</a></li>
+                            <li><a href="#budgets"><span>04</span>Budgets</a></li>
+                            <li><a href="#verification"><span>05</span>Verification</a></li>
+                        </ol>
+                    </nav>
+                    <figure>
+                        <img src="assets/mission/hades_cad.jpg" alt="CAD of the H-ADES CubeSat with deployed solar arrays">
+                        <figcaption>H-ADES with solar arrays deployed.</figcaption>
+                    </figure>
+                    <div>
+                        <span class="eyebrow">Key numbers</span>
+                        <ul class="lang-list">
+                            <li><span>Orbit</span><span>SSO, 550 km</span></li>
+                            <li><span>Form factor</span><span>12U XL</span></li>
+                            <li><span>Wet mass</span><span>20.3 kg</span></li>
+                            <li><span>Payloads</span><span>3</span></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <span class="eyebrow">Tools &amp; methods</span>
+                        <div class="tag-list">
+                            <span class="tag">Systems engineering</span>
+                            <span class="tag">Requirements (Valispace)</span>
+                            <span class="tag">ECSS standards</span>
+                            <span class="tag">Interface definition</span>
+                            <span class="tag">Mass / power / volume budgets</span>
+                            <span class="tag">STK</span>
+                            <span class="tag">DRAMA</span>
+                            <span class="tag">Trade-offs (AHP)</span>
+                            <span class="tag">AIV planning</span>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+
+            <nav class="project-nav" aria-label="More projects">
+                <a href="progetto-simulatore.html"><small>← Previous</small><span>6-DoF CubeSat Docking Simulator</span></a>
+                <a href="progetto-rover.html"><small>Next →</small><span>Lunar Rover Payload Challenge</span></a>
+            </nav>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Stefano Bossolasco</p>
+            <p><a href="index.html">Back to home</a></p>
+        </div>
+    </footer>
+
+    <script src="app.js?v=13"></script>
+</body>
+</html>

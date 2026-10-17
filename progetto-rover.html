@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunar Rover Payload Challenge | Stefano Bossolasco</title>
+    <meta name="description" content="Team Moonquake at the Thales Alenia Space Lunar Rover Payload Challenge: a rover payload that lays and buries power and data cables between lunar facilities.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='6' fill='%2338bdf8'/><ellipse cx='16' cy='16' rx='14' ry='5' fill='none' stroke='%2338bdf8' stroke-width='2' transform='rotate(-25 16 16)'/></svg>">
+    <script>
+        (function () {
+            var t = null;
+            try { t = localStorage.getItem('theme'); } catch (e) {}
+            if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', t);
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=13">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <header class="navbar scrolled">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Stefano<span>.</span>Bossolasco</a>
+            <nav class="nav-menu" id="nav-menu" aria-label="Main">
+                <a href="index.html#research" class="nav-link">Research</a>
+                <a href="index.html#experience" class="nav-link">Experience</a>
+                <a href="index.html#projects" class="nav-link active">Projects</a>
+                <a href="index.html#education" class="nav-link">Education</a>
+                <a href="index.html#skills" class="nav-link">Skills</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </nav>
+            <div class="nav-controls">
+                <button class="icon-btn theme-toggle" id="theme-toggle" aria-label="Toggle light/dark theme">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+                <button class="icon-btn nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main" class="project-page">
+        <div class="container">
+            <a href="index.html#projects" class="breadcrumb">← All projects</a>
+
+            <header class="project-header">
+                <span class="eyebrow">Company challenge · Thales Alenia Space · Team Moonquake</span>
+                <h1>Lunar Rover Payload Challenge</h1>
+                <p class="lead">Our team designed a rover payload that lays power or data cables between lunar facilities and buries them in the regolith to protect them.</p>
+            </header>
+
+            <div class="project-meta">
+                <div><small>Organiser</small><span>Thales Alenia Space</span></div>
+                <div><small>Format</small><span>Company challenge</span></div>
+                <div><small>Venue</small><span>I3P, Torino</span></div>
+                <div><small>Team</small><span>Moonquake (4 people)</span></div>
+            </div>
+
+            <figure class="project-video">
+                <video src="assets/rover/rover_sequence.mp4" poster="assets/rover/rover_sequence_poster.jpg" autoplay muted loop playsinline controls preload="metadata"></video>
+                <figcaption>CAD animation of the operating sequence: gripping the cable, deploying the plow and laying the cable.</figcaption>
+            </figure>
+
+            <div class="project-layout">
+                <article class="prose">
+                    <section id="challenge" class="pblock">
+                        <header class="pblock-head">
+                            <span class="pblock-num">01</span>
+                            <div><span class="pblock-kicker">Challenge</span><h2>A payload for Thales Alenia Space's rover</h2></div>
+                        </header>
+                        <p class="pblock-lead">Each team acted as an engineering company proposing a low-cost payload breadboard built from COTS parts.</p>
+                        <p>In the first edition of Thales Alenia Space's Lunar Rover Payload Challenge, each team acted as an engineering company proposing one payload for a lunar rover mission. The payload had to be a low-cost breadboard, built from COTS components and rapid prototyping, that could be mounted and tested on the company's rover prototype.</p>
+                        <p>Each team pitched its design to the company in 10 minutes. Proposals were judged on technical validity (50%), innovation (30%) and presentation (20%).</p>
+                    </section>
+                    <section id="idea" class="pblock">
+                        <header class="pblock-head">
+                            <span class="pblock-num">02</span>
+                            <div><span class="pblock-kicker">Idea</span><h2>Burying cables between lunar bases</h2></div>
+                        </header>
+                        <p class="pblock-lead">The payload plugs a cable into one facility, buries it in the regolith while the rover drives, and connects it to the next.</p>
+                        <p>A lunar outpost needs to connect its facilities — power plants, habitats, antennas — with power or optical-fibre cables. Laid on the surface, cables are exposed to extreme temperature swings, micrometeorites, dust and the traffic of rovers and landers. Our payload lets the rover <strong>plug a cable into one facility, bury it in the regolith while driving, and connect it to the next</strong>.</p>
+                        <ul>
+                            <li><strong>Thermal stability:</strong> just below the surface, temperature varies far less than on top, which we backed with published lunar subsurface temperature data.</li>
+                            <li><strong>Protection:</strong> shielding from radiation, micrometeorite impacts and debris, and less signal interference for data cables.</li>
+                            <li><strong>Safe operations:</strong> no cables in the way of rover or lander activity.</li>
+                        </ul>
+                    </section>
+                    <section id="design" class="pblock">
+                        <header class="pblock-head">
+                            <span class="pblock-num">03</span>
+                            <div><span class="pblock-kicker">Design</span><h2>Spool, arm and plow</h2></div>
+                        </header>
+                        <p class="pblock-lead">The payload uses two of the rover's hosting slots and is driven by a Raspberry Pi and an Arduino.</p>
+                        <p>What each slot holds:</p>
+                        <ul>
+                            <li><strong>Upper deck:</strong> an aluminium casing holding a composite cable spool, plus a 4-degree-of-freedom robotic hand that grips the cable and pushes the connector into the facility's outlet. A wide-angle camera on the arm sees both the hand and the plow. A Raspberry Pi and an Arduino UNO drive five stepper motors (NEMA 17 and NEMA 24).</li>
+                            <li><strong>Side slot:</strong> a hollow stainless-steel cable plow on a 450 mm ball screw, lowered into the soil at about 3 mm/s by a stepper motor. A vibration motor helps it break through larger debris, and a side door lets the cable pass through.</li>
+                        </ul>
+                        <div class="figure-pair">
+                            <figure class="prose-figure"><img src="assets/rover/payload_top.jpg" alt="Top view of the payload with the cable spool in its casing" loading="lazy"><figcaption>Upper deck: spool casing and arm.</figcaption></figure>
+                            <figure class="prose-figure"><img src="assets/rover/plow_cable_catch.jpg" alt="The plow catching the cable next to the rover wheel" loading="lazy"><figcaption>Side slot: the plow catching the cable.</figcaption></figure>
+                        </div>
+                        <h3>Operating sequence</h3>
+                        <ol class="steps">
+                            <li>The hand grips the cable and moves it in front of the rover.</li>
+                            <li>The rover approaches the docking point, computed on the Raspberry Pi from the camera feed, and plugs the connector into the outlet.</li>
+                            <li>The arm releases the cable, which is guided into the plow.</li>
+                            <li>The plow lowers and digs into the regolith, burying the cable as the rover drives.</li>
+                            <li>At the second facility, the same steps run in reverse to connect the other end.</li>
+                        </ol>
+                        <h3>System architecture</h3>
+                        <figure class="prose-figure">
+                            <div class="diagram-scroll"><svg class="system-diagram" viewBox="0 0 800 460" role="img" aria-labelledby="sa-title sa-desc" xmlns="http://www.w3.org/2000/svg"><title id="sa-title">Payload system architecture</title><desc id="sa-desc">The rover supplies power to all units and positioning data to the Raspberry Pi. The camera feeds images to the Raspberry Pi, which sends manoeuvre commands to the rover and movement commands to the Arduino UNO. The Arduino controls six stepper motors (Z-axis for the plow ball screw, coil for the cable spool, arm, and three clamp steppers for the hand) and reads back their positions.</desc><defs><style>.sa-box{fill:var(--surface-2,#f2f5fa);stroke:var(--border-strong,#c5ccd6);stroke-width:1}.sa-title{font-family:"Space Grotesk",Inter,sans-serif;font-size:14px;font-weight:600;fill:var(--text,#0b1220)}.sa-sub{font-family:Inter,sans-serif;font-size:11px;fill:var(--muted,#5b6678)}.sa-label{font-family:Inter,sans-serif;font-size:11px;fill:var(--text-2,#334155)}.sa-data{stroke:var(--accent,#0369a1)}.sa-ctrl{stroke:var(--industry,#6d28d9)}.sa-fb{stroke:var(--muted,#5b6678);stroke-dasharray:2 3}.sa-pwr{stroke:var(--venture,#c2410c);stroke-dasharray:6 4}</style><marker id="sa-arrow-data" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" style="fill: var(--accent)"/></marker><marker id="sa-arrow-ctrl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" style="fill: var(--industry)"/></marker><marker id="sa-arrow-fb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" style="fill: var(--muted)"/></marker></defs><path d="M360 94 V168" fill="none" stroke-width="1.6" class="sa-data" marker-end="url(#sa-arrow-data)"/><text x="352" y="128" class="sa-label" text-anchor="end">positioning</text><text x="352" y="142" class="sa-label" text-anchor="end">data</text><path d="M440 170 V96" fill="none" stroke-width="1.6" class="sa-data" marker-end="url(#sa-arrow-data)"/><text x="448" y="136" class="sa-label">manoeuvre commands</text><path d="M200 192 H298" fill="none" stroke-width="1.6" class="sa-data" marker-end="url(#sa-arrow-data)"/><text x="249" y="184" class="sa-label" text-anchor="middle">image feed</text><path d="M400 234 V308" fill="none" stroke-width="1.6" class="sa-ctrl" marker-end="url(#sa-arrow-ctrl)"/><text x="408" y="276" class="sa-label">movement commands</text><path d="M500 334 H545 M545 46 V366" fill="none" stroke-width="1.6" class="sa-ctrl"/><path d="M545 46 H598" fill="none" stroke-width="1.6" class="sa-ctrl" marker-end="url(#sa-arrow-ctrl)"/><path d="M545 110 H598" fill="none" stroke-width="1.6" class="sa-ctrl" marker-end="url(#sa-arrow-ctrl)"/><path d="M545 174 H598" fill="none" stroke-width="1.6" class="sa-ctrl" marker-end="url(#sa-arrow-ctrl)"/><path d="M545 238 H598" fill="none" stroke-width="1.6" class="sa-ctrl" marker-end="url(#sa-arrow-ctrl)"/><path d="M545 302 H598" fill="none" stroke-width="1.6" class="sa-ctrl" marker-end="url(#sa-arrow-ctrl)"/><path d="M545 366 H598" fill="none" stroke-width="1.6" class="sa-ctrl" marker-end="url(#sa-arrow-ctrl)"/><path d="M598 384 H560 V354 H502" fill="none" stroke-width="1.6" class="sa-fb" marker-end="url(#sa-arrow-fb)"/><text x="400" y="392" class="sa-label" text-anchor="middle">step control · position feedback</text><path d="M500 46 H582 V380" fill="none" stroke-width="1.6" class="sa-pwr"/><path d="M582 60 H598" fill="none" stroke-width="1.6" class="sa-pwr"/><path d="M582 124 H598" fill="none" stroke-width="1.6" class="sa-pwr"/><path d="M582 188 H598" fill="none" stroke-width="1.6" class="sa-pwr"/><path d="M582 252 H598" fill="none" stroke-width="1.6" class="sa-pwr"/><path d="M582 316 H598" fill="none" stroke-width="1.6" class="sa-pwr"/><path d="M582 380 H598" fill="none" stroke-width="1.6" class="sa-pwr"/><path d="M300 46 H272 V346 H298 M272 218 H298" fill="none" stroke-width="1.6" class="sa-pwr"/><text x="512" y="38" class="sa-label">power bus</text><g><rect x="300" y="30" width="200" height="64" rx="10" fill="#f2f5fa" stroke="#c5ccd6" class="sa-box"/><rect x="300" y="30" width="4" height="64" rx="2" style="fill: var(--text-2)"/><text x="316" y="59.0" class="sa-title">Rover</text><text x="316" y="76.0" class="sa-sub">5 / 12 / 24 VDC · ≤ 100 W</text></g><g><rect x="20" y="160" width="180" height="64" rx="10" fill="#f2f5fa" stroke="#c5ccd6" class="sa-box"/><rect x="20" y="160" width="4" height="64" rx="2" style="fill: var(--accent)"/><text x="36" y="189.0" class="sa-title">Camera</text><text x="36" y="206.0" class="sa-sub">wide-angle, on the arm</text></g><g><rect x="300" y="170" width="200" height="64" rx="10" fill="#f2f5fa" stroke="#c5ccd6" class="sa-box"/><rect x="300" y="170" width="4" height="64" rx="2" style="fill: var(--accent)"/><text x="316" y="199.0" class="sa-title">Raspberry Pi</text><text x="316" y="216.0" class="sa-sub">docking &amp; manoeuvre planning</text></g><g><rect x="300" y="310" width="200" height="64" rx="10" fill="#f2f5fa" stroke="#c5ccd6" class="sa-box"/><rect x="300" y="310" width="4" height="64" rx="2" style="fill: var(--industry)"/><text x="316" y="339.0" class="sa-title">Arduino UNO</text><text x="316" y="356.0" class="sa-sub">stepper control</text></g><g><rect x="600" y="30" width="180" height="48" rx="10" fill="#f2f5fa" stroke="#c5ccd6" class="sa-box"/><rect x="600" y="30" width="4" height="48" rx="2" style="fill: var(--industry)"/><text x="616" y="51.0" class="sa-title">Z-axis stepper</text><text x="616" y="68.0" class="sa-sub">plow ball screw</text></g><g><rect x="600" y="94" width="180" height="48" rx="10" fill="#f2f5fa" stroke="#c5ccd6" class="sa-box"/><rect x="600" y="94" width="4" height="48" rx="2" style="fill: var(--industry)"/><text x="616" y="115.0" class="sa-title">Coil stepper</text><text x="616" y="132.0" class="sa-sub">cable spool</text></g><g><rect x="600" y="158" width="180" height="48" rx="10" fill="#f2f5fa" stroke="#c5ccd6" class="sa-box"/><rect x="600" y="158" width="4" height="48" rx="2" style="fill: var(--industry)"/><text x="616" y="179.0" class="sa-title">Arm stepper</text><text x="616" y="196.0" class="sa-sub">arm extension</text></g><g><rect x="600" y="222" width="180" height="48" rx="10" fill="#f2f5fa" stroke="#c5ccd6" class="sa-box"/><rect x="600" y="222" width="4" height="48" rx="2" style="fill: var(--industry)"/><text x="616" y="243.0" class="sa-title">Clamp stepper 1</text><text x="616" y="260.0" class="sa-sub">hand</text></g><g><rect x="600" y="286" width="180" height="48" rx="10" fill="#f2f5fa" stroke="#c5ccd6" class="sa-box"/><rect x="600" y="286" width="4" height="48" rx="2" style="fill: var(--industry)"/><text x="616" y="307.0" class="sa-title">Clamp stepper 2</text><text x="616" y="324.0" class="sa-sub">hand</text></g><g><rect x="600" y="350" width="180" height="48" rx="10" fill="#f2f5fa" stroke="#c5ccd6" class="sa-box"/><rect x="600" y="350" width="4" height="48" rx="2" style="fill: var(--industry)"/><text x="616" y="371.0" class="sa-title">Clamp stepper 3</text><text x="616" y="388.0" class="sa-sub">hand</text></g><g transform="translate(20 440)"><line x1="0" y1="0" x2="26" y2="0" stroke-width="1.6" class="sa-data"/><text x="34" y="4" class="sa-label">data</text><line x1="90" y1="0" x2="116" y2="0" stroke-width="1.6" class="sa-ctrl"/><text x="124" y="4" class="sa-label">control</text><line x1="192" y1="0" x2="218" y2="0" stroke-width="1.6" class="sa-fb"/><text x="226" y="4" class="sa-label">feedback</text><line x1="298" y1="0" x2="324" y2="0" stroke-width="1.6" class="sa-pwr"/><text x="332" y="4" class="sa-label">power</text></g></svg></div>
+                            <p class="swipe-hint">Swipe sideways to see the full diagram.</p>
+                            <figcaption>The Raspberry Pi plans docking and manoeuvres from the camera and the rover's positioning data; the Arduino drives the six steppers and monitors their positions. All units run on the rover's power bus.</figcaption>
+                        </figure>
+                    </section>
+                    <section id="budgets" class="pblock">
+                        <header class="pblock-head">
+                            <span class="pblock-num">04</span>
+                            <div><span class="pblock-kicker">Budgets</span><h2>Technical budgets</h2></div>
+                        </header>
+                        <p class="pblock-lead">50 W per manoeuvre, 13 kg and about €1,000 for the prototype.</p>
+                        <div class="stat-grid">
+                            <div><strong>50 W</strong><span>max power per manoeuvre</span></div>
+                            <div><strong>13 kg</strong><span>mass, without cable and PLA plow</span></div>
+                            <div><strong>131 L</strong><span>max volume, incl. cable coil</span></div>
+                            <div><strong>~€1,000</strong><span>prototype cost (€600 electronics, €400 structure)</span></div>
+                        </div>
+                        <p>We estimated the plow drag at about 230 N; the vibration motor lowers it by roughly 5%.</p>
+                    </section>
+                    <section id="plan" class="pblock">
+                        <header class="pblock-head">
+                            <span class="pblock-num">05</span>
+                            <div><span class="pblock-kicker">Plan</span><h2>Prototyping and testing plan</h2></div>
+                        </header>
+                        <p class="pblock-lead">A three-week, mostly 3D-printed build, then tests on loose sand over compact soil.</p>
+                        <p>Almost every part can be 3D-printed, so we planned a three-week build covering final design, printing, assembly and software. The first plow prototype would have a PLA core with a steel outer shield.</p>
+                        <p>Testing would cover structural and computational analysis, system integration, socket-plugging and cable-catching tests, and a field test on compact soil under about 10 cm of loose sand, to mimic the dusty top layer and harder subsurface of the Moon.</p>
+                        <!-- TODO (Stefano): add your own role in the team and the outcome (placing / selection for 2025 prototyping). -->
+
+                        <figure class="prose-figure">
+                            <img src="assets/rover_hackathon_group.jpg" alt="Group photo of the challenge participants in front of the Lunar Rover Payload Challenge slide" loading="lazy">
+                            <figcaption>Participants of the first Lunar Rover Payload Challenge at I3P, Politecnico di Torino's incubator.</figcaption>
+                        </figure>
+                    </section>
+                </article>
+
+                <aside class="project-aside">
+                    <nav class="toc" aria-label="On this page">
+                        <span class="eyebrow">On this page</span>
+                        <ol>
+                            <li><a href="#challenge"><span>01</span>Challenge</a></li>
+                            <li><a href="#idea"><span>02</span>Idea</a></li>
+                            <li><a href="#design"><span>03</span>Design</a></li>
+                            <li><a href="#budgets"><span>04</span>Budgets</a></li>
+                            <li><a href="#plan"><span>05</span>Plan</a></li>
+                        </ol>
+                    </nav>
+                    <figure>
+                        <img src="assets/rover/payload_side.jpg" alt="CAD render of the rover prototype with the spool casing on the upper deck and the plow on the side">
+                        <figcaption>Payload integrated on the rover prototype.</figcaption>
+                    </figure>
+                    <div>
+                        <span class="eyebrow">Team Moonquake</span>
+                        <p style="font-size: 0.9rem;">Andrea Banda, Lucio Druetto, Stefano Bossolasco, Sergiu Florea</p>
+                    </div>
+                    <div>
+                        <span class="eyebrow">Tools &amp; methods</span>
+                        <div class="tag-list">
+                            <span class="tag">SolidWorks CAD</span>
+                            <span class="tag">Mechanism design</span>
+                            <span class="tag">Raspberry Pi &amp; Arduino</span>
+                            <span class="tag">Stepper motors</span>
+                            <span class="tag">Technical budgets</span>
+                            <span class="tag">Rapid prototyping</span>
+                            <span class="tag">Technical pitch</span>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+
+            <nav class="project-nav" aria-label="More projects">
+                <a href="progetto-missione.html"><small>← Previous</small><span>H-ADES: Dual-Mission 12U CubeSat</span></a>
+                <a href="progetto-mpc.html"><small>Next →</small><span>Scenario-Based MPC with Thruster Failures</span></a>
+            </nav>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Stefano Bossolasco</p>
+            <p><a href="index.html">Back to home</a></p>
+        </div>
+    </footer>
+
+    <script src="app.js?v=13"></script>
+</body>
+</html>

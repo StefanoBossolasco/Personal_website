@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stefano Bossolasco | Aerospace Engineer — Spacecraft GNC</title>
+    <meta name="description" content="Stefano Bossolasco — aerospace engineer working on spacecraft guidance, navigation and control. Research collaborator at NASA JPL, M.Sc. at Politecnico di Torino, with experience in space business development and tech entrepreneurship.">
+    <meta property="og:title" content="Stefano Bossolasco — Aerospace Engineer, Spacecraft GNC">
+    <meta property="og:description" content="Research in fault-tolerant MPC for small spacecraft, space-industry proposals, and a startup that reached 100k+ users.">
+    <meta property="og:image" content="assets/profile.png">
+    <meta property="og:type" content="profile">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='6' fill='%2338bdf8'/><ellipse cx='16' cy='16' rx='14' ry='5' fill='none' stroke='%2338bdf8' stroke-width='2' transform='rotate(-25 16 16)'/></svg>">
+    <script>
+        // Apply the saved/system theme before first paint to avoid a flash.
+        (function () {
+            var t = null;
+            try { t = localStorage.getItem('theme'); } catch (e) {}
+            if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', t);
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=13">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <canvas id="orbit-canvas" aria-hidden="true"></canvas>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">Stefano<span>.</span>Bossolasco</a>
+            <nav class="nav-menu" id="nav-menu" aria-label="Main">
+                <a href="#research" class="nav-link">Research</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <a href="assets/CV_Stefano_Bossolasco.pdf" class="nav-link nav-cv-mobile" data-requires-file target="_blank" rel="noopener">Download CV</a>
+            </nav>
+            <div class="nav-controls">
+                <a href="assets/CV_Stefano_Bossolasco.pdf" class="btn btn-secondary btn-sm nav-cv" data-requires-file target="_blank" rel="noopener">CV</a>
+                <button class="icon-btn theme-toggle" id="theme-toggle" aria-label="Toggle light/dark theme">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+                <button class="icon-btn nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <!-- Hero -->
+        <section id="home" class="hero">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <div class="status-pill"><span class="pulse-dot"></span> Open to PhD positions in spacecraft GNC &amp; autonomy</div>
+                    <h1 class="hero-title">Stefano Bossolasco</h1>
+                    <p class="hero-subtitle">Aerospace engineer working on <span class="hl">guidance, navigation &amp; control</span> for small spacecraft</p>
+                    <p class="hero-lead">
+                        I'm finishing my M.Sc. at Politecnico di Torino and collaborating with NASA JPL on fault-tolerant Model Predictive Control for close-proximity operations. Before and alongside research, I wrote ESA proposals at a space start-up and co-founded a tech company that grew to 100,000+ users.
+                    </p>
+                    <ul class="hero-facts">
+                        <li class="hero-fact"><span class="dot" style="background: var(--research)"></span>Research collaborator, NASA JPL</li>
+                        <li class="hero-fact"><span class="dot" style="background: var(--accent)"></span>M.Sc. Aerospace Eng., PoliTo</li>
+                        <li class="hero-fact"><span class="dot" style="background: var(--industry)"></span>Space business development</li>
+                        <li class="hero-fact"><span class="dot" style="background: var(--venture)"></span>Startup co-founder</li>
+                    </ul>
+                    <div class="hero-actions">
+                        <a href="#research" class="btn btn-primary">View research</a>
+                        <a href="assets/CV_Stefano_Bossolasco.pdf" class="btn btn-secondary" data-requires-file target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            Download CV
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">Get in touch</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="portrait">
+                        <img src="assets/profile.png" alt="Portrait of Stefano Bossolasco" width="320" height="320">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Affiliations -->
+        <section class="affiliations" aria-label="Affiliations">
+            <div class="container affiliations-inner">
+                <span class="affiliations-label">Worked &amp; studied at</span>
+                <div class="affiliations-logos">
+                    <img src="assets/nasa_jpl_logo_full.png" alt="NASA Jet Propulsion Laboratory" class="logo-plate">
+                    <span class="wordmark">Politecnico di Torino</span>
+                    <img src="assets/revolv_logo_white.png" alt="Revolv Space" class="affil-logo only-dark"><img src="assets/revolv_logo_dark.png" alt="Revolv Space" class="affil-logo only-light">
+                    <img src="assets/avio_aero_logo.png" alt="Avio Aero" class="logo-plate">
+                    <img src="assets/eventvm_logo.png" alt="Eventvm">
+                </div>
+            </div>
+        </section>
+
+        <!-- Three tracks overview -->
+        <section id="profile" class="section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="eyebrow">Profile</span>
+                    <h2 class="section-title">One engineer, three perspectives</h2>
+                    <p class="section-lead">My core is research in spacecraft GNC. Industry and entrepreneurship taught me how technology gets funded, scoped and shipped — which shapes the problems I choose to work on.</p>
+                </div>
+                <div class="tracks-grid">
+                    <a href="#exp-research" class="track-card research reveal">
+                        <div class="track-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(-30 12 12)"/></svg></div>
+                        <span class="track-label">Research</span>
+                        <h3>Spacecraft GNC &amp; control</h3>
+                        <p>Fault-tolerant, scenario-based MPC for small free-flying spacecraft inspecting space structures, in collaboration with NASA JPL.</p>
+                        <div class="track-stats">
+                            <div class="track-stat"><strong>69.3%</strong><span>clean success under faults</span></div>
+                            <div class="track-stat"><strong>6-DoF</strong><span>validation</span></div>
+                        </div>
+                        <span class="track-link">Research experience</span>
+                    </a>
+                    <a href="#exp-industry" class="track-card industry reveal">
+                        <div class="track-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16M6 20V9l6-5 6 5v11M10 20v-5h4v5"/></svg></div>
+                        <span class="track-label">Space industry</span>
+                        <h3>Proposals, TRL &amp; engineering</h3>
+                        <p>Technical proposals for ESA and national space-agency tenders at Revolv Space; aero-engine pump simulation at Avio Aero.</p>
+                        <div class="track-stats">
+                            <div class="track-stat"><strong>ESA</strong><span>tenders &amp; funding</span></div>
+                            <div class="track-stat"><strong>2</strong><span>companies</span></div>
+                        </div>
+                        <span class="track-link">Industry experience</span>
+                    </a>
+                    <a href="#exp-venture" class="track-card venture reveal">
+                        <div class="track-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4.5 2 7.5-6.5-4.5L5.5 21l2-7.5L2 9h7z"/></svg></div>
+                        <span class="track-label">Entrepreneurship</span>
+                        <h3>Co-founder &amp; product lead</h3>
+                        <p>Co-founded Eventvm: led a team of 10, built the event-aggregation engine and raised early capital.</p>
+                        <div class="track-stats">
+                            <div class="track-stat"><strong>100k+</strong><span>active users</span></div>
+                            <div class="track-stat"><strong>€240k</strong><span>capital raised</span></div>
+                        </div>
+                        <span class="track-link">Startup experience</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research -->
+        <section id="research" class="section section-alt">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="eyebrow">Research</span>
+                    <h2 class="section-title">Making autonomous spacecraft safe when hardware fails</h2>
+                    <p class="section-lead">I'm interested in control methods that keep guarantees under uncertainty and faults, and that are cheap enough to run on real flight computers.</p>
+                </div>
+
+                <div class="research-layout">
+                    <article class="card current-research reveal">
+                        <h3 class="card-title">Current research</h3>
+                        <img src="assets/mpc/gsat_run_cover_sm.jpg" alt="The GSAT sled flying a square trajectory around an obstacle at JPL" loading="lazy">
+                        <div class="meta-row"><span>NASA JPL · GNC</span><span>M.Sc. thesis</span><span>03/2025 – present</span></div>
+                        <h3>Scenario-based MPC for free-flyer inspection with thruster failures</h3>
+                        <ul class="rq-list">
+                            <li><span>Problem</span><span>A small free-flyer inspecting an uncrewed outpost must stay collision-safe even when thrusters fail, deciding on board within every control step.</span></li>
+                            <li><span>Approach</span><span>One shared input sequence that satisfies every constraint across a tree of failure scenarios, picking the most critical failures to hedge each step and adding residual-based fault identification.</span></li>
+                            <li><span>Results</span><span>69.3% clean success over 648 runs with up to four failed thrusters, against 26.4% for nominal MPC and on par with a controller told the failure in advance. On JPL's GSAT air-bearing sled: 14 of 19 runs on target with thrusters disabled, vs 3 of 9 for nominal.</span></li>
+                        </ul>
+                        <div class="tag-list">
+                            <span class="tag">Scenario-based MPC</span><span class="tag">Fault identification</span><span class="tag">CasADi</span><span class="tag">Python / C++</span><span class="tag">F´</span>
+                        </div>
+                        <a href="progetto-mpc.html" class="project-more">Read the project summary</a>
+                    </article>
+
+                    <div class="side-stack">
+                        <div class="card reveal">
+                            <h3 class="card-title">Research interests</h3>
+                            <ol class="interest-list">
+                                <li><span class="interest-num">01</span><div><h4>Robust &amp; fault-tolerant control</h4><p>Scenario-based and stochastic MPC with safety guarantees under actuator faults.</p></div></li>
+                                <li><span class="interest-num">02</span><div><h4>Proximity operations</h4><p>Inspection, rendezvous and servicing around large space structures.</p></div></li>
+                                <li><span class="interest-num">03</span><div><h4>Onboard autonomy</h4><p>Computationally tractable optimisation for resource-limited flight hardware.</p></div></li>
+                                <li><span class="interest-num">04</span><div><h4>Rendezvous, docking &amp; ADCS</h4><p>Relative-motion guidance and attitude control for small satellites, from simulation to validation.</p></div></li>
+                            </ol>
+                        </div>
+
+                        <div class="card reveal">
+                            <h3 class="card-title">Publications &amp; talks</h3>
+                            <ul class="pub-list">
+                                <!--
+                                  Add each paper / poster / talk as an <li>. Example:
+                                  <li><span class="pub-status">Conference · 2026</span><br>
+                                      <strong>S. Bossolasco</strong>, A. Author, "Title of the paper", <em>Venue</em>, 2026. <a href="...">[PDF]</a></li>
+                                -->
+                                <li><span class="pub-status">M.Sc. thesis · in progress</span><br>Scenario-based MPC for free-flyer inspection with thruster failures. NASA JPL; mentors Dr. F. Rossi and Dr. D. Sternsberg. Final presentation delivered at JPL.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience, grouped by track -->
+        <section id="experience" class="section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="eyebrow">Experience</span>
+                    <h2 class="section-title">Where I've worked</h2>
+                    <p class="section-lead">Grouped by track so each one can be read on its own.</p>
+                </div>
+
+                <!-- Research track -->
+                <div class="track-group research" id="exp-research">
+                    <div class="track-group-header"><h3>Research</h3><p>Spacecraft GNC</p></div>
+                    <div class="exp-list">
+                        <article class="exp-card reveal">
+                            <div>
+                                <div class="exp-top">
+                                    <img src="assets/nasa_jpl_logo_full.png" alt="NASA JPL" class="exp-logo logo-plate">
+                                    <span class="exp-date">03/2025 – Present</span>
+                                </div>
+                                <h4 class="exp-role">Research Collaborator — Spacecraft GNC</h4>
+                                <p class="exp-org">NASA Jet Propulsion Laboratory · Pasadena, CA / Remote</p>
+                                <ul class="exp-points">
+                                    <li>Developing a fault-tolerant, scenario-based MPC framework for close-proximity inspection by small free-flying spacecraft around space structures.</li>
+                                    <li>Designed and analysed geometric, temporal and learning-based scenario-pruning algorithms, reducing scenario trees from 2.5 billion paths to a size tractable for flight computers.</li>
+                                    <li>Validated relative-dynamics performance in the high-fidelity SmallSatSim 6-DoF environment and wrote test protocols for the GSAT (GNC Spacecraft Autonomy Testbed) planar air-bearing facility.</li>
+                                </ul>
+                                <div class="tag-list"><span class="tag">MPC</span><span class="tag">CasADi</span><span class="tag">SmallSatSim</span><span class="tag">GSAT testbed</span></div>
+                            </div>
+                            <div class="exp-gallery">
+                                <button type="button" data-lightbox><img src="assets/nasa_jpl_photo_1.jpg" alt="At NASA JPL" loading="lazy"></button>
+                                <button type="button" data-lightbox><img src="assets/nasa_jpl_photo_2.jpg" alt="NASA JPL visitor sign" loading="lazy"></button>
+                                <button type="button" data-lightbox><img src="assets/nasa_jpl_photo_3.jpg" alt="Portrait at the NASA JPL sign" loading="lazy"></button>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Industry track -->
+                <div class="track-group industry" id="exp-industry">
+                    <div class="track-group-header"><h3>Space industry &amp; engineering</h3><p>Proposals, systems, simulation</p></div>
+                    <div class="exp-list">
+                        <article class="exp-card reveal">
+                            <div>
+                                <div class="exp-top">
+                                    <span><img src="assets/revolv_logo_white.png" alt="Revolv Space" class="exp-logo only-dark"><img src="assets/revolv_logo_dark.png" alt="Revolv Space" class="exp-logo only-light"></span>
+                                    <span class="exp-date">06/2025 – 01/2026</span>
+                                </div>
+                                <h4 class="exp-role">Business Developer Engineer — Space Systems</h4>
+                                <p class="exp-org">Revolv Space · Torino, Italy / Hybrid</p>
+                                <div class="exp-highlights"><span class="exp-highlight">ESA &amp; national agency tenders</span><span class="exp-highlight">TRL justification</span></div>
+                                <ul class="exp-points">
+                                    <li>Led the preparation of technical proposals for competitive tenders and public funding programmes from national and European space agencies.</li>
+                                    <li>Defined system-level technical scopes and justified Technology Readiness Levels using experimental and test data.</li>
+                                    <li>Structured preliminary work packages, allocated technical resources and ran budget analyses for mission programmes.</li>
+                                </ul>
+                                <div class="tag-list"><span class="tag">ESA ITT</span><span class="tag">European funding</span><span class="tag">Work packages</span><span class="tag">Project management</span></div>
+                            </div>
+                            <div class="exp-gallery">
+                                <button type="button" data-lightbox><img src="assets/revolv_photo_1.jpg" alt="Revolv Space office" loading="lazy"></button>
+                                <button type="button" data-lightbox><img src="assets/revolv_photo_2.jpg" alt="Revolv hardware check" loading="lazy"></button>
+                                <button type="button" data-lightbox><img src="assets/revolv_photo_3.jpg" alt="Revolv Space event" loading="lazy"></button>
+                            </div>
+                        </article>
+
+                        <article class="exp-card no-gallery reveal">
+                            <div>
+                                <div class="exp-top">
+                                    <img src="assets/avio_aero_logo.png" alt="Avio Aero" class="exp-logo logo-plate">
+                                    <span class="exp-date">02/2023 – 08/2023</span>
+                                </div>
+                                <h4 class="exp-role">Mechanical Engineering Intern &amp; B.Sc. Thesis Student</h4>
+                                <p class="exp-org">Avio Aero (a GE Aerospace company) · Torino, Italy</p>
+                                <ul class="exp-points">
+                                    <li>Numerical analysis and simulation of oil aeration effects in external gear pumps for aero-engines.</li>
+                                    <li>Quantified the impact of trapped gear volume on pump suction efficiency through custom simulations.</li>
+                                    <li>Tuned fluid-dynamic parameters to improve pump component performance.</li>
+                                </ul>
+                                <div class="tag-list"><span class="tag">Simulation</span><span class="tag">MATLAB &amp; Simulink</span><span class="tag">Fluid dynamics</span></div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Entrepreneurship track -->
+                <div class="track-group venture" id="exp-venture">
+                    <div class="track-group-header"><h3>Entrepreneurship</h3><p>Product, team, fundraising</p></div>
+                    <div class="exp-list">
+                        <article class="exp-card reveal">
+                            <div>
+                                <div class="exp-top">
+                                    <img src="assets/eventvm_logo.png" alt="Eventvm" class="exp-logo">
+                                    <span class="exp-date">04/2022 – 05/2025</span>
+                                </div>
+                                <h4 class="exp-role">Co-Founder &amp; Product Lead — Tech &amp; BD</h4>
+                                <p class="exp-org">Eventvm Srl · Torino, Italy</p>
+                                <div class="exp-highlights"><span class="exp-highlight">100k+ active users</span><span class="exp-highlight">€240k raised</span><span class="exp-highlight">Team of 10</span></div>
+                                <ul class="exp-points">
+                                    <li>Co-founded the company and set the technology roadmap and platform architecture, leading a team of 10 developers and designers.</li>
+                                    <li>Built the core event-aggregation engine: custom crawlers, scrapers and API integrations that ingest and deduplicate feeds from dozens of platforms in real time.</li>
+                                    <li>Led B2B partnerships with regional ticketing networks, venues and organisers.</li>
+                                    <li>Owned financial modelling, budgeting and investor decks to raise early capital.</li>
+                                </ul>
+                                <div class="tag-list"><span class="tag">Product</span><span class="tag">Data pipelines</span><span class="tag">Fundraising</span><span class="tag">Team leadership</span></div>
+                            </div>
+                            <div class="exp-gallery">
+                                <button type="button" data-lightbox><img src="assets/eventvm_photo_1.jpg" alt="Eventvm team" loading="lazy"></button>
+                                <button type="button" data-lightbox><img src="assets/eventvm_photo_2.jpg" alt="Eventvm team in Rome" loading="lazy"></button>
+                                <button type="button" data-lightbox><img src="assets/eventvm_photo_3.jpg" alt="Eventvm users milestone celebration" loading="lazy"></button>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="section section-alt">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="eyebrow">Projects</span>
+                    <h2 class="section-title">Technical projects</h2>
+                    <p class="section-lead">Research and academic work, each with a short write-up of the problem, method and tools.</p>
+                </div>
+                <div class="projects-grid">
+                    <a href="progetto-mpc.html" class="project-card reveal">
+                        <div class="project-thumb"><img src="assets/mpc/gsat_run_cover_sm.jpg" alt="" loading="lazy"></div>
+                        <div class="project-body">
+                            <div class="project-kicker"><span>M.Sc. thesis · NASA JPL</span><span>2025 –</span></div>
+                            <h3>Scenario-based MPC with thruster failures</h3>
+                            <p>Keeps an inspection free-flyer safe when thrusters fail: 69.3% clean success across 648 runs, on par with a controller that knows the failure.</p>
+                            <div class="tag-list"><span class="tag">Python</span><span class="tag">CasADi</span><span class="tag">GNC</span></div>
+                            <span class="project-more">Read more</span>
+                        </div>
+                    </a>
+                    <a href="progetto-simulatore.html" class="project-card reveal">
+                        <div class="project-thumb"><img src="assets/sim/electra_cad.jpg" alt="" loading="lazy"></div>
+                        <div class="project-body">
+                            <div class="project-kicker"><span>Academic · PoliTo</span><span>2024 – 25</span></div>
+                            <h3>6-DoF CubeSat docking simulator</h3>
+                            <p>A 3U CubeSat docking with a target in LEO via Hohmann transfer, radial boost and cone approach. APF + LQR compared against sliding-mode control.</p>
+                            <div class="tag-list"><span class="tag">MATLAB</span><span class="tag">Simulink</span><span class="tag">LQR / SMC</span></div>
+                            <span class="project-more">Read more</span>
+                        </div>
+                    </a>
+                    <a href="progetto-missione.html" class="project-card reveal">
+                        <div class="project-thumb"><img src="assets/mission/hades_inner_structure.jpg" alt="" loading="lazy" style="object-fit: contain; background: #e9ecf1;"></div>
+                        <div class="project-body">
+                            <div class="project-kicker"><span>Systems Engineer · PoliTo</span><span>2025</span></div>
+                            <h3>H-ADES: dual-mission 12U CubeSat</h3>
+                            <p>Phase 0/A design of a CubeSat that tests deep-space navigation, laser communication and ML power management in LEO while monitoring urban heat islands. I coordinated system design, integration, requirements and budgets in a 13-person team.</p>
+                            <div class="tag-list"><span class="tag">Systems engineering</span><span class="tag">Budgets</span><span class="tag">ECSS</span></div>
+                            <span class="project-more">Read more</span>
+                        </div>
+                    </a>
+                    <a href="progetto-rover.html" class="project-card reveal">
+                        <div class="project-thumb"><img src="assets/rover/payload_side.jpg" alt="" loading="lazy" style="object-fit: contain; background: #ffffff;"></div>
+                        <div class="project-body">
+                            <div class="project-kicker"><span>Company challenge · Thales Alenia Space</span></div>
+                            <h3>Lunar Rover Payload Challenge</h3>
+                            <p>A rover payload that lays power and data cables between lunar bases and buries them in the regolith.</p>
+                            <div class="tag-list"><span class="tag">CAD</span><span class="tag">Mechanisms</span><span class="tag">Technical budgets</span></div>
+                            <span class="project-more">Read more</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section id="education" class="section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="eyebrow">Education</span>
+                    <h2 class="section-title">Education &amp; certifications</h2>
+                </div>
+                <div class="edu-layout">
+                    <div class="edu-timeline reveal">
+                        <div class="edu-item">
+                            <span class="edu-date">09/2024 – Present</span>
+                            <h3 class="edu-degree">M.Sc. Aerospace Engineering</h3>
+                            <span class="edu-school">Politecnico di Torino</span>
+                            <p class="edu-details">Space systems, flight dynamics, GNC, space mission analysis and system-level modelling, with a focus on numerical methods. Thesis on robust scenario-based MPC, carried out in collaboration with NASA JPL.</p>
+                            <!-- Add GPA, thesis title and supervisor here, e.g.:
+                            <div class="edu-facts"><span class="tag">GPA 28.5/30</span><span class="tag">Thesis: …</span><span class="tag">Supervisor: Prof. …</span></div> -->
+                        </div>
+                        <div class="edu-item">
+                            <span class="edu-date">09/2020 – 09/2023</span>
+                            <h3 class="edu-degree">B.Sc. Aerospace Engineering</h3>
+                            <span class="edu-school">Politecnico di Torino</span>
+                            <p class="edu-details">Mathematics, aerodynamics, structures, orbital mechanics, propulsion and control. Thesis carried out at Avio Aero on oil aeration in aero-engine gear pumps.</p>
+                            <!-- <div class="edu-facts"><span class="tag">Final grade …/110</span></div> -->
+                        </div>
+                        <div class="edu-item">
+                            <span class="edu-date">2014 – 2018</span>
+                            <h3 class="edu-degree">Scientific High School Diploma — Applied Sciences</h3>
+                            <span class="edu-school">I.I.S. "G. Vallauri", Fossano</span>
+                            <p class="edu-details">National finalist, Italian Astronomy Olympiad (2016); participant in the Physics and Natural Sciences Olympiads.</p>
+                        </div>
+                    </div>
+
+                    <div class="card reveal">
+                        <h3 class="card-title">Certifications</h3>
+                        <ul class="cert-list">
+                            <li>
+                                <span class="cert-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(-30 12 12)"/></svg></span>
+                                <div><h4>STK Master Certification — Level 2</h4><p>Systems Tool Kit (AGI / Ansys): orbital mechanics &amp; mission design</p></div>
+                            </li>
+                            <li>
+                                <span class="cert-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+                                <div><h4>IELTS Academic — Band 7.0</h4><p>CEFR level C1</p></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills" class="section section-alt">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="eyebrow">Skills</span>
+                    <h2 class="section-title">Toolbox</h2>
+                </div>
+                <div class="skills-grid">
+                    <div class="card skill-card reveal">
+                        <h3>GNC &amp; control</h3>
+                        <div class="tag-list">
+                            <span class="tag">Model Predictive Control</span><span class="tag">Scenario-based / robust MPC</span><span class="tag">LQR</span><span class="tag">Sliding-mode control</span><span class="tag">PID</span><span class="tag">ADCS</span><span class="tag">Relative dynamics (Hill / CW)</span><span class="tag">Artificial potential fields</span><span class="tag">6-DoF simulation</span>
+                        </div>
+                    </div>
+                    <div class="card skill-card reveal">
+                        <h3>Software &amp; tools</h3>
+                        <div class="tag-list">
+                            <span class="tag">Python</span><span class="tag">CasADi</span><span class="tag">MATLAB</span><span class="tag">Simulink</span><span class="tag">STK</span><span class="tag">CAD</span><span class="tag">Web crawlers &amp; APIs</span>
+                        </div>
+                    </div>
+                    <div class="card skill-card reveal">
+                        <h3>Space systems &amp; business</h3>
+                        <div class="tag-list">
+                            <span class="tag">Systems engineering</span><span class="tag">Requirements &amp; ECSS</span><span class="tag">Mission analysis</span><span class="tag">Mass, power &amp; link budgets</span><span class="tag">TRL assessment</span><span class="tag">ESA proposals</span><span class="tag">Work packages &amp; budgets</span><span class="tag">Fundraising</span><span class="tag">Team leadership</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="beyond">
+                    <div class="card reveal">
+                        <h3 class="card-title">Languages</h3>
+                        <ul class="lang-list">
+                            <li><span>Italian</span><span>Native</span></li>
+                            <li><span>English</span><span>C1 (IELTS 7.0)</span></li>
+                        </ul>
+                    </div>
+                    <div class="card reveal">
+                        <h3 class="card-title">Beyond work</h3>
+                        <div class="beyond-item">
+                            <h4>Treasurer &amp; volunteer</h4>
+                            <span class="beyond-meta">Movimento Giovanile di Centallo · 2022 – present</span>
+                            <p>Manage the association's finances and help organise cultural, educational and social activities.</p>
+                        </div>
+                        <div class="beyond-item" style="margin-top: 1rem;">
+                            <h4>Scuba diving</h4>
+                            <span class="beyond-meta">Sub-Rec Diver 1* (TSA)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="contact-card reveal">
+                    <div>
+                        <span class="eyebrow">Contact</span>
+                        <h2>Let's talk research</h2>
+                        <p>I'm looking for PhD opportunities in spacecraft GNC, robust control and autonomy. I'm also happy to discuss collaborations, space-sector projects or startups.</p>
+                        <div class="hero-actions">
+                            <a href="mailto:stefano.bossolasco.01@gmail.com" class="btn btn-primary">Email me</a>
+                            <a href="assets/CV_Stefano_Bossolasco.pdf" class="btn btn-secondary" data-requires-file target="_blank" rel="noopener">Download CV</a>
+                        </div>
+                    </div>
+                    <div class="contact-links">
+                        <a href="mailto:stefano.bossolasco.01@gmail.com" class="contact-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <div><small>Email</small><span>stefano.bossolasco.01@gmail.com</span></div>
+                        </a>
+                        <a href="https://www.linkedin.com/in/stefano-bossolasco-10b54219a/" target="_blank" rel="noopener noreferrer" class="contact-link">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                            <div><small>LinkedIn</small><span>stefano-bossolasco</span></div>
+                        </a>
+                        <div class="contact-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            <div><small>References</small><span>Available on request</span></div>
+                        </div>
+                        <!-- Add GitHub / Google Scholar / ORCID the same way once available -->
+                        <div class="contact-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <div><small>Based in</small><span>Torino, Italy</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Stefano Bossolasco</p>
+            <p>Spacecraft GNC · Space systems · Product</p>
+        </div>
+    </footer>
+
+    <dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
+        <button class="icon-btn lightbox-close" type="button" aria-label="Close">✕</button>
+        <figure><img src="" alt=""><figcaption></figcaption></figure>
+    </dialog>
+
+    <script src="app.js?v=13"></script>
+</body>
+</html>
