@@ -338,11 +338,6 @@ html[data-theme="dark"] .exp-logo.logo-plate { background: #f1f5f9; padding: 5px
 .rq-list li { display: grid; grid-template-columns: 110px 1fr; gap: 1rem; font-size: var(--fs-body); color: var(--text-2); }
 .rq-list li > span:first-child { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-label); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); padding-top: 0.15rem; }
 
-.interest-list { display: grid; gap: 1.1rem; }
-.interest-list li { display: grid; grid-template-columns: 28px 1fr; gap: 0.8rem; }
-.interest-num { font-family: var(--font-display); font-weight: 700; color: var(--accent); font-size: var(--fs-small); padding-top: 0.1rem; }
-.interest-list h4 { font-size: var(--fs-lead); font-weight: 600; margin-bottom: 0.2rem; }
-.interest-list p { font-size: var(--fs-small); }
 
 .side-stack { display: grid; gap: 1.5rem; }
 
